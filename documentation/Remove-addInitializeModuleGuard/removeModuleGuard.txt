@@ -1,0 +1,183 @@
+******************************************************************************************************************************************************************************
+V1-Main
+
+
+
+
+
+[#remove-add-initialize-module-guard]
+=== Remove addInitializeModuleGuard()
+
+In OneCX v6, `addInitializeModuleGuard()` has been removed.  Translations are now handled by `TranslationConnectionService`.
+
+**Update imports and providers**:
+
+* Remove the `addInitializeModuleGuard()` guard wrapper from router configuration.
+* Replace: +
+`RouterModule.forRoot(addInitializeModuleGuard(routes))` → `RouterModule.forRoot(routes)`  
+`RouterModule.forChild(addInitializeModuleGuard(routes))` → `RouterModule.forChild(routes)`
+* If the module imports `AngularAcceleratorModule` from `@onecx/angular-accelerator`, no further changes are required.
+* Otherwise, add `provideTranslationConnectionService()` from `@onecx/angular-utils` to the module’s `providers` list.
+
+[IMPORTANT]
+====
+`AngularAcceleratorModule` already provides `provideTranslationConnectionService()`.
+====
+
+**Example**:
+
+.Before
+[source,typescript]
+----
+@NgModule({
+  imports: [
+    RouterModule.forRoot(addInitializeModuleGuard(routes)),
+  ],
+})
+export class AppModule {}
+----
+
+.After
+[source,typescript]
+----
+import { provideTranslationConnectionService } from '@onecx/angular-utils';
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
+  providers: [
+    provideTranslationConnectionService(),
+  ],
+})
+export class AppModule {}
+----
+
+
+
+
+
+
+
+******************************************************************************************************************************************************************************
+V1
+
+
+
+
+
+[#remove-add-initialize-module-guard]
+=== Remove addInitializeModuleGuard()
+
+In OneCX v6, `addInitializeModuleGuard()` has been removed.  Translations are now handled by `TranslationConnectionService`.
+
+==== Update imports and providers
+
+* Remove the `addInitializeModuleGuard()` guard wrapper from router configuration.
+* Replace: +
+`RouterModule.forRoot(addInitializeModuleGuard(routes))` → `RouterModule.forRoot(routes)`  
+`RouterModule.forChild(addInitializeModuleGuard(routes))` → `RouterModule.forChild(routes)`
+* Replace router configuration:
++
+`RouterModule.forRoot(addInitializeModuleGuard(routes))` → `RouterModule.forRoot(routes)`
++
+`RouterModule.forChild(addInitializeModuleGuard(routes))` → `RouterModule.forChild(routes)`
+* If the module imports `AngularAcceleratorModule` from `@onecx/angular-accelerator`, no further changes are required.
+* Otherwise, add `provideTranslationConnectionService()` from `@onecx/angular-utils` to the module’s `providers` list.
+
+[IMPORTANT]
+====
+`AngularAcceleratorModule` already provides `provideTranslationConnectionService()`.
+====
+
+==== Example
+
+.Before
+[source,typescript]
+----
+@NgModule({
+  imports: [
+    RouterModule.forRoot(addInitializeModuleGuard(routes)),
+  ],
+})
+export class AppModule {}
+----
+
+.After
+[source,typescript]
+----
+import { provideTranslationConnectionService } from '@onecx/angular-utils';
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
+  providers: [
+    provideTranslationConnectionService(),
+  ],
+})
+export class AppModule {}
+----
+
+
+
+
+
+
+
+
+******************************************************************************************************************************************************************************
+V1
+
+
+
+
+
+[#remove-add-initialize-module-guard]
+=== Remove addInitializeModuleGuard()
+
+In OneCX v6, `addInitializeModuleGuard()` has been removed.  Translations are now handled by `TranslationConnectionService`.
+
+==== Update imports and providers
+
+* Remove the `addInitializeModuleGuard()` guard wrapper from router configuration.
+* Register routes using `RouterModule.forRoot(routes)` and `RouterModule.forChild(routes)`.
+* If the module imports `AngularAcceleratorModule` from `@onecx/angular-accelerator`, no further changes are required.
+* Otherwise, add `provideTranslationConnectionService()` from `@onecx/angular-utils` to the module’s `providers` list.
+
+[IMPORTANT]
+====
+`AngularAcceleratorModule` already provides `provideTranslationConnectionService()`.
+====
+
+==== Example
+
+.Before
+[source,typescript]
+----
+@NgModule({
+  imports: [
+    RouterModule.forRoot(addInitializeModuleGuard(routes)),
+  ],
+})
+export class AppModule {}
+----
+
+.After
+[source,typescript]
+----
+import { provideTranslationConnectionService } from '@onecx/angular-utils';
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
+  providers: [
+    provideTranslationConnectionService(),
+  ],
+})
+export class AppModule {}
+----
+
+
+
