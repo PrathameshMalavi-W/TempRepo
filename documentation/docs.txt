@@ -1,0 +1,526 @@
+**********************************************************************************************************************************************************************************************************************************
+
+
+Docs-Formatting
+ifdef::env-site[]
+include::partial$\_attributes.adoc[]
+endif::[]
+:imagesdir: ../../images
+:page-hide-next:
+
+= OneCX Docs: Formatting & Conventions
+
+This guide summarizes a collection of common {asciidoc_doc_link} features and conventions to be used in OneCX documentation.
+
+# [TIP]
+
+# Familiarize yourself with {asciidoc_doc_link} and {antora_doc_link}.
+
+== Navigation
+
+- Each module must have a `nav.adoc` file in the `partials/` folder.
+- The `nav.adoc` defines the module navigation structure.
+- Follow the structure of existing modules as reference.
+
+# [CAUTION]
+
+. Each module is part of the overall documentation site.
+
+. Make the module navigation fit into the overall site structure. +
+
+- Limit the number of levels and avoid deep nesting. +
+- # Check this after adding new pages.
+
+== Global Attributes
+
+- Global attributes are set on the parent site. Do not redefine them in modules.
+
+* .Global Attributes, excerpt
+  [source,asciidoc]
+  ---
+  product: OneCX Platform
+  product-version: latest
+  toclevels: 2
+  ---
+
+== Page Attributes
+
+- Page attributes can be defined on top of the page as needed.
+- A good practice is to
+  ** Set `:imagesdir:` to the local `images/` folder of the module.
+  ** Define attributes for commonly referenced URLs. +
+  Use them like this: `{asciidoc_doc_link}`.
+
+.Example page header
+[source,asciidoc,subs="verbatim"]
+
+---
+
+:idprefix:
+:idseparator: -
+:imagesdir: ../images
+
+:asciidoc_doc_link: link:https://docs.asciidoctor.org/asciidoc/latest/[AsciiDoc]
+:api_guidelines_link: xref:documentation:onecx-docs-dev:guidelines/api_guidelines.adoc[API Guidelines]
+
+---
+
+== Headings
+
+- Use consistent heading levels (`=`, `==`, `====`) throughout the documentation.
+- Limit nesting to 3–4 levels for clarity.
+- Use meaningful and concise headings that reflect the content of the section.
+- Avoid overly long or complex headings => Check TOC for readability.
+
+.Heading Examples - TOC view
+[cols="^1a,^1a"]
+|===
+|
+.Bad Heading Example
+image::docs_guide/docs_guide_heading_bad_example.png[]
+|
+.Good Heading Example
+image::docs_guide/docs_guide_heading_good_example.png[width=180]
+
+|===
+
+== Includes
+
+- Use `include::` to reuse content.
+- When embedding a page section under the current heading, apply `leveloffset`.
+
+.Example Include with leveloffset
+[source,asciidoc]
+
+---
+
+## include::./scripts.adoc[leveloffset=+1]
+
+- Place frequently reused fragments in `partials/` folder of the module.
+
+== Collapsible Sections
+
+- Wrap long text, tables or optional sections with `[%collapsible] in ====` blocks:
+
+.Example Collapsible Section (source)
+[source,asciidoc]
+
+---
+
+# [%collapsible]
+
+# include::documentation:onecx-docs-apps:partial$core-app-table.adoc[]
+
+---
+
+.Example Collapsible Section (rendered)
+[%collapsible]
+====
+include::documentation:onecx-docs-apps:partial$core-app-table.adoc[]
+====
+
+== Cross-References
+
+- Use `xref:` for links within OneCX documentation.
+- Do not use hard coded URLs on the final docs site.
+- Keep links relative within the module if possible.
+
+.Example module-internal links
+[source,asciidoc]
+
+---
+
+xref:./setup.adoc[Setting up]
+xref:./scripts/start.adoc[start-onecx.sh]
+
+---
+
+- For cross-module references, use the full path:
+
+.Example module-2-module link
+[source,asciidoc]
+
+---
+
+## xref:documentation:onecx-docs-dev:guidelines/api_guidelines.adoc[API Guidelines]
+
+== External Links
+
+- Use concise inline links:
+
+## [source,asciidoc]
+
+## https://www.keycloak.org/[Keycloak]
+
+- Define attributes for commonly referenced URLs and reuse them.
+
+== Anchors
+
+- Use anchors for deep-links to specific sections
+
+## [source,asciidoc]
+
+[#available-flags]
+= Available Flags
+
+---
+
+== Admonitions
+
+- Use AsciiDoc admonitions for clarity.
+- Standard types: `NOTE`, `IMPORTANT`, `CAUTION`, `TIP`, `WARNING`
+
+.Example Admonition
+[source,asciidoc]
+
+---
+
+# [IMPORTANT]
+
+# Critical guidance, e.g. WSL2 setup on Windows.
+
+---
+
+# [IMPORTANT]
+
+# Critical guidance, e.g. WSL2 setup on Windows.
+
+== Code Blocks
+
+- Use `[source,<lang>]` with fenced blocks.
+- Language examples: `bash`, `javascript`, `json`, `yaml`, `sql`, `text`.
+
+.Example Source Block (source)
+[source,asciidoc]
+
+---
+
+[source,bash]
+
+---
+
+./start-onecx.sh -p all
+
+---
+
+---
+
+.Example Source Block (rendered)
+[source,bash]
+
+---
+
+## ./start-onecx.sh -p all
+
+== Images
+
+- Set `:imagesdir:` and reference images with meaningful captions.
+
+## [source,asciidoc]
+
+.Successful start
+image::scripts/script_start-onecx.sh.png[]
+
+---
+
+== Lists
+
+- Common list types: unordered (`*`), ordered (`.`), and description lists.
+- Use nested lists for sub-items.
+- Description lists are great for compact option docs.
+- Add the `horizontal` role for side-by-side rendering and specify labelwidth in percent if needed.
+
+.Example Description List (source)
+[source,asciidoc]
+
+---
+
+-s::
+Enables secure mode, which enforces authentication/authorization and taken into account the tenant ID of the user. (Default: disabled)
+
+---
+
+-s::
+Enables secure mode, which enforces authentication/authorization and taken into account the tenant ID of the user. (Default: disabled)
+
+.Example Description List, horizontal (source)
+[source,asciidoc]
+
+---
+
+[horizontal,labelwidth=10]
+-s::
+Enables secure mode, which enforces authentication/authorization and taken into account the tenant ID of the user. (Default: disabled)
+
+---
+
+[horizontal,labelwidth=10]
+-s::
+Enables secure mode, which enforces authentication/authorization and taken into account the tenant ID of the user. (Default: disabled)
+
+== Tables
+
+- Use role-based striped tables and column definitions.
+- The first line is the header, followed by a blank line, unless otherwise defined.
+- Do not use huge tables.
+
+.Example Table (source)
+[source,asciidoc]
+
+---
+
+[.stripes-even,cols="20,~"]
+|===
+| Service | Description
+
+| Keycloak | IAM service used by OneCX
+| pgAdmin | Manage Postgres databases
+|===
+
+---
+
+.Example Table (rendered)
+[.stripes-even,cols="20,~"]
+|===
+| Service | Description
+
+| Keycloak | IAM service used by OneCX
+| pgAdmin | Manage Postgres databases
+|===
+
+
+
+
+
+
+**********************************************************************************************************************************************************************************************************************************
+
+
+
+
+
+Docs Guildlines
+
+ifdef::env-site[]
+include::partial$\_attributes.adoc[]
+endif::[]
+:imagesdir: ../../images
+
+= OneCX Docs: Guidelines
+
+These guidelines provide a framework for creating clear, consistent and user-friendly documentation for OneCX projects using {antora_doc_link} and {asciidoc_doc_link}. +
+They are designed to help authors produce high-quality content that meets the needs of our users and contributors.
+
+== Core Guidelines
+
+Simplicity:: Keep content straightforward and focused on user needs. +
+= No prosaic explanations. +
+= Follow the {kiss_principle_link} principle.
+Clarity:: Write clear, concise instructions with examples, code snippets, and visuals.
+Consistency:: Use a uniform structure, style, and terminology to make docs easy to navigate. +
+= Check linked resources before publish your docs.
+Modularity:: Organize content into reusable modules and partials for maintainability. +
+= Leverage includes and partials to avoid duplication
+Navigation:: Provide intuitive navigation with a well-structured sidebar and cross-references. +
+= Use meaningful link text instead of raw URLs. +
+= Use xref: for internal links. +
+= Ensure all links are valid and up-to-date. +
+= Do not use excessively deep nesting levels – a maximum of 3-4 levels.
+Readability:: Use formatting, headings, lists, and visuals as used within
+the reference implementation to enhance comprehension. +
+= Avoid using your own formatting styles that differ from the reference implementation.
+Error-free:: Proofread content to eliminate typos, grammatical errors, and technical inaccuracies. +
+= Check console output after building the website.
+
+== Contribution Workflow
+
+- Start with small, focused PRs; write clear descriptions.
+- Reference issues when applicable; include screenshots for UI docs.
+- Follow existing repository lint/format rules; keep diffs minimal.
+- Review feedback constructively; iterate promptly.
+- Prefer evergreen docs that age slowly; call out version specifics.
+
+== Anti-Patterns to Avoid
+
+- Overly complex explanations that confuse users.
+- Inconsistent terminology or formatting that hinders navigation.
+- Redundant content that could be modularized.
+- Broken links or outdated references.
+- Own formatting styles that differ from the reference implementation.
+- Nested headings beyond 3-4 levels.
+
+== Writing Style
+For detailed writing style guidelines, see the {onecx_docs_writing_style_ref} document.
+
+== Reference
+The _reference implementation_ is the documentation of {onecx_local_env_docs_ref}. +
+Follow the idea of structure, used {asciidoc_doc_link} features, navigation and conventions.
+
+
+
+
+
+
+
+**********************************************************************************************************************************************************************************************************************************
+
+
+
+
+
+Docs-Setup
+
+ifdef::env-site[]
+include::partial$\_attributes.adoc[]
+endif::[]
+:imagesdir: ../../images
+
+= OneCX Docs: Set up Local Environment
+
+To preview and test your documentation changes locally, set up the documentation environment as following:
+
+== Get and Build the Docs
+
+. Clone the {onecx_docs_repo_link}
+
+- ## [source,bash]
+  ## git clone git@github.com:onecx/docs.git
+
+. Go to `Docs` directory.
+
+. Install Node Modules
+
+- ## [source,bash]
+  ## npm install
+
+. Install Antora CLI if it is not already installed
+
+- ## [source,bash]
+  ## npm install --global @antora/cli @antora/site-generator-default
+
+. Create Docs Site
+
+- ## [source,bash]
+  ## npx antora antora-playbook.yml 2> site.log
+- `site.log` contains the log output of the build process. Check it for errors.
+
+. Open Build Result in Browser
+
+- ## [source,bash]
+  ## ./build/site/index.html
+
+== Integrate a local Module
+
+. Create a local copy of Antora Playbook
+
+- ## [source,bash]
+  ## cp antora-playbook.yml antora-playbook.local.yml
+
+. Use the local module path in the local Antora Playbook
+
+- In this example, the local path `/home/henry/onecx/docs/docs-guides-ui` is used instead of the remote URL for the `docs-guides-ui` module.
+- ## [source,yaml]
+  #- url: https://github.com/onecx/docs-guides-ui.git
+
+* url: /home/henry/onecx/docs/docs-guides-ui
+  branches: [HEAD]
+  start_path: docs
+
+---
+
+. Create Docs site with local Module
+
+- ## [source,bash]
+  ## npx antora antora-playbook.local.yml 2> site.log
+
+== Check for Errors
+Make sure to check the `site.log` file for errors during the build process.
+
+- Search for entries related to your local module. +
+  If there are issues with the local module, look for error messages such as "module not found" or "invalid content".
+
+- Ignore entries about Quarkus and BFF if not relevant.
+
+If you add new modules, verify the navigation structure in the built site.
+
+== Development Support
+
+- Use AsciiDoc plugin in your IDE for syntax highlighting and preview.
+- Check the log output after building the website to identify issues.
+
+
+
+
+
+**********************************************************************************************************************************************************************************************************************************
+
+
+
+
+DOCS Writting Style
+
+ifdef::env-site[]
+include::partial$\_attributes.adoc[]
+endif::[]
+:imagesdir: ../../images
+
+= OneCX Docs: Writing Style
+
+This document outlines the preferred writing style for OneCX documentation to ensure clarity, consistency, and professionalism across all content.
+
+== General Principles
+
+- Write for the target audience, considering their technical background and needs.
+- Be direct and actionable; prefer imperative voice.
+- Structure content logically with clear headings.
+- Keep headings consistent (`==`, `===`) and limit nesting to 3–4 levels.
+- Use bullets and description lists for procedures and options.
+- Add screenshots for critical steps and outcomes.
+- Avoid duplication by using partials and includes.
+- Keep labels short, be focsused and avoid unnecessary words.
+- Each line in lists should start with a capital letter and end without a period, unless it is a complete sentence.
+- Language
+  ** Do not use colloquial language or slang. +
+  e.g. do not use cookbook terms like "whip up" or "cook". +
+  We do not write cookbooks and recipes but technical documentation.
+  ** Use active voice and present tense.
+  ** Prefer simple words over complex ones. +
+  e.g. use "use" instead of "utilize".
+  ** Write in a clear and concise manner; avoid unnecessary words.
+  ** Avoid jargon unless necessary; explain technical terms when first introduced.
+  ** Use technical terms consistently as per the reference implementation.
+- Text Emphasis
+  ** Use emphasis sparingly to highlight _important_ terms.
+  ** Do not use more than one text emphasis per word (e.g. _italic_ or **bold**).
+
+== Terminology
+
+- Use official product names consistently (e.g. OneCX, OneCX Local Environment).
+- Define acronyms on first use (e.g. BPMN - Business Process Model and Notation).
+- Use consistent terminology for features and components across all documentation.
+- Avoid internal jargon; prefer terms that are widely understood by the target audience.
+
+== Tone and Voice
+
+- Maintain a professional and approachable tone.
+- Be encouraging and supportive, especially in troubleshooting sections.
+- Avoid humor or sarcasm, as it may not translate well across cultures.
+- Focus on user tasks and outcomes rather than internal processes.
+
+== Examples
+
+- Provide realistic and runnable examples where possible.
+- Ensure examples are up-to-date with the latest software versions.
+- Avoid including sensitive information (e.g. passwords, API keys) in examples.
+- Use consistent formatting for code snippets and commands.
+  ** Use fenced code blocks with language hints (e.g. `source,js`).
+  ** Minimize boilerplate code; focus on relevant parts.
+
+== Review and Feedback
+
+- Encourage peer reviews to ensure clarity and accuracy.
+- Incorporate user feedback to improve documentation quality over time.
+
+== Reference
+The _reference implementation_ is the documentation of {onecx_local_env_docs_ref}. +
+Follow the idea of structure, used {asciidoc_doc_link} features, navigation and conventions.
