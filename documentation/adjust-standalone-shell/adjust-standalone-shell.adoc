@@ -1,0 +1,51 @@
+[#adjust-standalone-mode]
+=== Adjust Standalone Mode
+
+In OneCX v6, the `@onecx/standalone-shell` library has been renamed to `@onecx/angular-standalone-shell`.
+
+Additionally, starting with v6, standalone applications must register standalone providers using `provideStandaloneProviders()`.
+
+==== Required changes
+
+* Update all imports from `@onecx/standalone-shell` to `@onecx/angular-standalone-shell`
+* Update the dependency name in `package.json`
+* Update any webpack configuration referencing the old package
+* Register `provideStandaloneProviders()` in the standalone module providers
+
+==== Update package dependency
+
+[source,bash]
+----
+npm uninstall --save @onecx/standalone-shell
+npm install --save @onecx/angular-standalone-shell
+----
+
+==== Example: updated-app-standalone.module.ts
+
+.Before
+[source,typescript]
+----
+import { StandaloneShellModule } from '@onecx/standalone-shell';
+
+@NgModule({
+  imports: [StandaloneShellModule]
+})
+export class AppModule {}
+----
+
+.After
+[source,typescript]
+----
+import {
+  StandaloneShellModule,
+  provideStandaloneProviders
+} from '@onecx/angular-standalone-shell';
+
+@NgModule({
+  imports: [StandaloneShellModule],
+  providers: [
+    provideStandaloneProviders()
+  ]
+})
+export class AppModule {}
+----
