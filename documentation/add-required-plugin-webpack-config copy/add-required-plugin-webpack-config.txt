@@ -1,0 +1,175 @@
+Tsk
+Description:
+
+doing the migration after Angular 19 update
+https://onecx.github.io/docs/documentation/current/onecx-portal-ui-libs/migrations/migrate-to-v6.html#material-new-plugin
+
+
+
+Angular Material related changes
+Add required plugin to webpack config (will be changed to OneCX plugin)
+Since version 6 it’s required to add the following plugin to the webpack configuration of the application.
+
+Webpack plugin snippet
+const { ModifySourcePlugin, ReplaceOperation } = require('modify-source-webpack-plugin')
+...
+const modifyMaterialPlugin = new ModifySourcePlugin({
+  rules: [
+    {
+      test: (module) => {
+        return (
+          module.resource &&
+          (module.resource.includes("@angular/material") ||
+            module.resource.includes("@angular/cdk"))
+        );
+      },
+      operations: [
+        new ReplaceOperation(
+          "all",
+          "document\\.createElement\\(",
+          'document.createElementFromMaterial({"this": this, "arguments": Array.from(arguments)},',
+        ),
+      ],
+    }
+  ]
+})
+
+module.exports = {
+  ...webpackConfig,
+  plugins: [...plugins, modifyMaterialPlugin]
+}
+
+
+
+
+
+******************************************************************************************************************************************************************************
+V1-Main
+
+
+
+[#material-new-plugin]
+=== Add Angular Material Webpack Plugin
+
+Since OneCX v6, applications using Angular Material must add an additional Webpack plugin.
+This change is required after upgrading to Angular 19.
+
+The plugin modifies Angular Material and CDK source code at build time.
+It will be replaced by a OneCX-provided plugin in a future version.
+
+==== Update Webpack Configuration
+
+Add the following plugin to the application Webpack configuration.
+
+==== Example
+
+[source,javascript]
+----
+const { ModifySourcePlugin, ReplaceOperation } = require('modify-source-webpack-plugin')
+
+const modifyMaterialPlugin = new ModifySourcePlugin({
+  rules: [
+    {
+      test: (module) => {
+        return (
+          module.resource &&
+          (module.resource.includes('@angular/material') ||
+            module.resource.includes('@angular/cdk'))
+        )
+      },
+      operations: [
+        new ReplaceOperation(
+          'all',
+          'document\\.createElement\\(',
+          'document.createElementFromMaterial({"this": this, "arguments": Array.from(arguments)},'
+        )
+      ]
+    }
+  ]
+})
+
+module.exports = {
+  ...webpackConfig,
+  plugins: [...plugins, modifyMaterialPlugin]
+}
+----
+
+
+
+
+
+
+
+
+
+******************************************************************************************************************************************************************************
+V2
+
+
+
+
+
+[#material-new-plugin]
+=== Add Angular Material Webpack Plugin
+
+In OneCX v6, applications using Angular Material must add an additional Webpack plugin.
+This change is required after upgrading to Angular 19.
+
+[NOTE]
+This setup will be replaced by a OneCX-provided Webpack plugin in a future version.
+
+==== Required changes
+
+Extend the application Webpack configuration with the `ModifySourcePlugin`
+to rewrite `@angular/material` and `@angular/cdk` source code at build time.
+
+==== Example
+
+[source,javascript]
+----
+const { ModifySourcePlugin, ReplaceOperation } = require('modify-source-webpack-plugin')
+
+const modifyMaterialPlugin = new ModifySourcePlugin({
+  rules: [
+    {
+      test: (module) => {
+        return (
+          module.resource &&
+          (module.resource.includes('@angular/material') ||
+            module.resource.includes('@angular/cdk'))
+        )
+      },
+      operations: [
+        new ReplaceOperation(
+          'all',
+          'document\\.createElement\\(',
+          'document.createElementFromMaterial({"this": this, "arguments": Array.from(arguments)},'
+        )
+      ]
+    }
+  ]
+})
+
+module.exports = {
+  ...webpackConfig,
+  plugins: [...plugins, modifyMaterialPlugin]
+}
+----
+
+
+
+
+
+
+
+
+
+
+ ***************************************************************************************************************************************************************************
+ V3
+
+
+
+
+
+
