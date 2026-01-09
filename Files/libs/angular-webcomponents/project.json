@@ -1,0 +1,68 @@
+{
+  "name": "angular-webcomponents",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/angular-webcomponents/src",
+  "prefix": "onecx",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build-migrations": {
+      "dependsOn": [
+        "build"
+      ],
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "tsc -p libs/angular-webcomponents/migrations/tsconfig.migrations.json"
+        ]
+      }
+    },
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/angular-webcomponents/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular-webcomponents/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular-webcomponents/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/angular-webcomponents/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular-webcomponents/**/*.ts",
+          "libs/angular-webcomponents/**/*.html",
+          "libs/angular-webcomponents/package.json"
+        ]
+      }
+    },
+    "release": {
+      "executor": "@onecx/release:update-build-publish",
+      "options": {
+        "buildTarget": "build-migrations"
+      }
+    }
+  }
+}

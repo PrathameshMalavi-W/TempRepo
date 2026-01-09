@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  padding: var(--page-padding, 1rem);
+  height: 100%;
+}
+@media (max-width: var(--mobile-break-point)) {
+  :host {
+    padding: var(--page-padding-lg, 1rem);
+    padding-top: var(--page-padding, 1rem);
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+}

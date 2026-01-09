@@ -1,0 +1,31 @@
+::ng-deep {
+  .p-buttonset .p-button {
+    min-width: auto;
+  }
+
+  .p-buttonset {
+    display: flex;
+  }
+
+  // Setting the drag ghost-element index to 2000 avoids potential overlapping issues with the dialog
+  .p-picklist-item.cdk-drag-preview {
+    z-index: 2000 !important;
+  }
+
+  .p-picklist > div.p-picklist-controls.p-picklist-transfer-controls > button.p-button-secondary,
+  .p-picklist > div.p-picklist-controls.p-picklist-source-controls > button.p-button-secondary,
+  .p-picklist > div.p-picklist-controls.p-picklist-target-controls > button.p-button-secondary {
+    background-color: var(--p-primary-color);
+    color: var(--p-primary-contrast-color);
+  }
+
+  .p-picklist > div.p-picklist-controls.p-picklist-transfer-controls > button.p-button-secondary:not(:disabled):hover,
+  .p-picklist > div.p-picklist-controls.p-picklist-source-controls > button.p-button-secondary:not(:disabled):hover,
+  .p-picklist > div.p-picklist-controls.p-picklist-target-controls > button.p-button-secondary:not(:disabled):hover {
+    background-color: var(--p-primary-hover-color);
+  }
+}
+
+.p-button {
+  height: 100%;
+}
