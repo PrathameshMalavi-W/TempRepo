@@ -1,1 +1,2 @@
 # TempRepo
+//@ts-nocheck

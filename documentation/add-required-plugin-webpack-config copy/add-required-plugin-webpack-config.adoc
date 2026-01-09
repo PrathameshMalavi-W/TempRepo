@@ -11,6 +11,9 @@ This setup will be replaced by a OneCX-provided Webpack plugin in a future versi
 
 Extend the application Webpack configuration with the `ModifySourcePlugin`
 to rewrite `@angular/material` and `@angular/cdk` source code at build time.
+Extend the application Webpack configuration (for example, `webpack.config.js`)
+with the `ModifySourcePlugin` to rewrite `@angular/material` and `@angular/cdk`
+source code at build time.
 
 ==== Example
 
