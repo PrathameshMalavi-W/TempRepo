@@ -1,0 +1,1409 @@
+﻿Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\accelerator
+Folder: accelerator
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator
+Folder: angular-accelerator
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-auth
+Folder: angular-auth
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface
+Folder: angular-integration-interface
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components
+Folder: angular-remote-components
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-standalone-shell
+Folder: angular-standalone-shell
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-testing
+Folder: angular-testing
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils
+Folder: angular-utils
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-webcomponents
+Folder: angular-webcomponents
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface
+Folder: integration-interface
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator
+Folder: ngrx-accelerator
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-integration-interface
+Folder: ngrx-integration-interface
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils
+Folder: nx-migration-utils
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\accelerator\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\accelerator\src
+Folder: src
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\accelerator\migrations\v6
+Folder: v6
+TS Files:
+  - migrate-onecx-to-v6.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\accelerator\src\lib
+Folder: lib
+TS Files:
+  - declarations.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\accelerator\src\lib\topic
+Folder: topic
+TS Files:
+  - message.ts
+  - syncable-topic.spec.ts
+  - syncable-topic.ts
+  - topic-data-message.ts
+  - topic-message-type.ts
+  - topic-message.ts
+  - topic-publisher.ts
+  - topic-resolve-message.ts
+  - topic.spec.ts
+  - topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\accelerator\src\lib\utils
+Folder: utils
+TS Files:
+  - date.utils.ts
+  - gatherer.spec.ts
+  - gatherer.ts
+  - get-normalized-browser-locales.utils.spec.ts
+  - get-normalized-browser-locales.utils.ts
+  - is-test.utils.ts
+  - logs.utils.ts
+  - normalize-locales.utils.spec.ts
+  - normalize-locales.utils.ts
+  - path.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\accelerator\src\lib\topic\mocks
+Folder: mocks
+TS Files:
+  - broadcast-channel.mock.ts
+  - fake-topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\.storybook
+Folder: .storybook
+TS Files:
+  - preview.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\assets
+Folder: assets
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\testing
+Folder: testing
+TS Files:
+  - column-group-selection.harness.ts
+  - content-container.harness.ts
+  - content.harness.ts
+  - custom-group-column-selector.harness.ts
+  - data-layout-selection.harness.ts
+  - data-list-grid.harness.ts
+  - data-table.harness.ts
+  - data-view.harness.ts
+  - default-grid-item.harness.ts
+  - default-list-item.harness.ts
+  - diagram.harness.ts
+  - dialog-content.harness.ts
+  - dialog-footer.harness.ts
+  - dialog-inline.harness.ts
+  - dialog-message-content.harness.ts
+  - filter-view.harness.ts
+  - group-by-count-diagram.harness.ts
+  - index.ts
+  - interactive-data-view.harness.ts
+  - lifecycle.harness.ts
+  - more-actions-menu-button.harness.ts
+  - page-header.harness.ts
+  - search-header.harness.ts
+  - slot.harness.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\assets\i18n
+Folder: i18n
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\assets\images
+Folder: images
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\assets\i18n\storybook-translations
+Folder: storybook-translations
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\assets\i18n\storybook-translations\page-header
+Folder: page-header
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\migrations\v6
+Folder: v6
+TS Files:
+  - migrate-onecx-to-v6.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib
+Folder: lib
+TS Files:
+  - angular-accelerator-primeng.module.ts
+  - angular-accelerator.module.ts
+  - storybook-breadcrumb.module.ts
+  - storybook-theme.module.ts
+  - storybook-translate.module.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components
+Folder: components
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\directives
+Folder: directives
+TS Files:
+  - advanced.directive.ts
+  - basic.directive.ts
+  - content-container.directive.ts
+  - content.directive.ts
+  - if-breakpoint.directive.ts
+  - if-permission.directive.spec.ts
+  - if-permission.directive.ts
+  - loading-indicator.directive.ts
+  - src.directive.ts
+  - template.directive.spec.ts
+  - template.directive.ts
+  - tooltipOnOverflow.directive.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\functions
+Folder: functions
+TS Files:
+  - at-least-one-field-filled-validator.ts
+  - flatten-object.spec.ts
+  - flatten-object.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\injection-tokens
+Folder: injection-tokens
+TS Files:
+  - has-permission-checker.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\model
+Folder: model
+TS Files:
+  - breadcrumb-menu-item.model.ts
+  - button-dialog.ts
+  - column-type.model.ts
+  - data-action.ts
+  - data-column-name-id.model.ts
+  - data-sort-direction.ts
+  - data-table-column.model.ts
+  - diagram-column.ts
+  - diagram-data.ts
+  - diagram-type.ts
+  - filter.model.ts
+  - translation.model.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\pipes
+Folder: pipes
+TS Files:
+  - dynamic.pipe.ts
+  - ocxtimeago.pipe.ts
+  - relative-date.pipe.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\services
+Folder: services
+TS Files:
+  - breadcrumb.service.ts
+  - export-data-service.spec.ts
+  - export-data.service.ts
+  - portal-dialog-service.stories.ts
+  - portal-dialog.service.spec.ts
+  - portal-dialog.service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\utils
+Folder: utils
+TS Files:
+  - colorutils.ts
+  - criteria.utils.ts
+  - data-operation-strategy.spec.ts
+  - data-operation-strategy.ts
+  - dateutils.ts
+  - dynamic-locale-id.ts
+  - enum-to-dropdown-options.utils.ts
+  - filter.utils.ts
+  - image-logo-url.utils.ts
+  - objectutils.ts
+  - primeicon.utils.ts
+  - rxjs-utils.ts
+  - string-and-array-helper-functions.utils.spec.ts
+  - string-and-array-helper-functions.utils.ts
+  - template.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\column-group-selection
+Folder: column-group-selection
+TS Files:
+  - column-group-selection.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\content
+Folder: content
+TS Files:
+  - content.component.spec.ts
+  - content.component.stories.ts
+  - content.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\content-container
+Folder: content-container
+TS Files:
+  - content-container.component.spec.ts
+  - content-container.component.stories.ts
+  - content-container.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\custom-group-column-selector
+Folder: custom-group-column-selector
+TS Files:
+  - custom-group-column-selector.component.spec.ts
+  - custom-group-column-selector.component.stories.ts
+  - custom-group-column-selector.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\data-layout-selection
+Folder: data-layout-selection
+TS Files:
+  - data-layout-selection.component.spec.ts
+  - data-layout-selection.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\data-list-grid
+Folder: data-list-grid
+TS Files:
+  - data-list-grid.component.spec.ts
+  - data-list-grid.component.stories.ts
+  - data-list-grid.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\data-list-grid-sorting
+Folder: data-list-grid-sorting
+TS Files:
+  - data-list-grid-sorting.component.spec.ts
+  - data-list-grid-sorting.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\data-sort-base
+Folder: data-sort-base
+TS Files:
+  - data-sort-base.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\data-table
+Folder: data-table
+TS Files:
+  - data-table.component.spec.ts
+  - data-table.component.stories.ts
+  - data-table.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\data-view
+Folder: data-view
+TS Files:
+  - data-view.component.spec.ts
+  - data-view.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\diagram
+Folder: diagram
+TS Files:
+  - diagram.component.spec.ts
+  - diagram.component.stories.ts
+  - diagram.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\dialog
+Folder: dialog
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\error-component
+Folder: error-component
+TS Files:
+  - global-error.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\filter-view
+Folder: filter-view
+TS Files:
+  - filter-view.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\group-by-count-diagram
+Folder: group-by-count-diagram
+TS Files:
+  - group-by-count-diagram.component.spec.ts
+  - group-by-count-diagram.component.stories.ts
+  - group-by-count-diagram.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\interactive-data-view
+Folder: interactive-data-view
+TS Files:
+  - interactive-data-view-filter-view.component.stories.ts
+  - interactive-data-view.component.spec.ts
+  - interactive-data-view.component.stories.ts
+  - interactive-data-view.component.ts
+  - storybook-config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\lifecycle
+Folder: lifecycle
+TS Files:
+  - lifecycle.component.spec.ts
+  - lifecycle.component.stories.ts
+  - lifecycle.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\loading-indicator
+Folder: loading-indicator
+TS Files:
+  - loading-indicator.component.stories.ts
+  - loading-indicator.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\page-header
+Folder: page-header
+TS Files:
+  - page-header.component.spec.ts
+  - page-header.component.stories.ts
+  - page-header.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\search-header
+Folder: search-header
+TS Files:
+  - search-header.component.spec.ts
+  - search-header.component.ts
+  - search-header.stories.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\dialog\dialog-content
+Folder: dialog-content
+TS Files:
+  - dialog-content.component.spec.ts
+  - dialog-content.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\dialog\dialog-footer
+Folder: dialog-footer
+TS Files:
+  - dialog-footer.component.spec.ts
+  - dialog-footer.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\dialog\dialog-inline
+Folder: dialog-inline
+TS Files:
+  - dialog-inline.component.spec.ts
+  - dialog-inline.component.stories.ts
+  - dialog-inline.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-accelerator\src\lib\components\dialog\dialog-message-content
+Folder: dialog-message-content
+TS Files:
+  - dialog-message-content.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-auth\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-auth\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-auth\migrations\v6
+Folder: v6
+TS Files:
+  - migrate-onecx-to-v6.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-auth\src\lib
+Folder: lib
+TS Files:
+  - angular-auth.module.ts
+  - auth-proxy.service.ts
+  - auth-service-wrapper.ts
+  - auth.service.ts
+  - declarations.ts
+  - token.interceptor.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-auth\src\lib\auth_services
+Folder: auth_services
+TS Files:
+  - disabled-auth.service.ts
+  - keycloak-auth.service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface\mocks
+Folder: mocks
+TS Files:
+  - app-config-service-mock.ts
+  - app-state-service-mock.ts
+  - configuration-service-mock.ts
+  - index.ts
+  - portal-message-service-mock.ts
+  - remote-components-service-mock.ts
+  - shell-capability-service-mock.ts
+  - user-service-mock.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface\migrations\test-utils
+Folder: test-utils
+TS Files:
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface\migrations\v6
+Folder: v6
+TS Files:
+  - migrate-onecx-to-v6.ts
+  - remove-add-initialize-module-guard.ts
+  - remove-auth-service.spec.ts
+  - remove-auth-service.ts
+  - replace-provide-app-service-mock.spec.ts
+  - replace-provide-app-service-mock.ts
+  - warn-removed-properties-from-theme-service.spec.ts
+  - warn-removed-properties-from-theme-service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface\migrations\v6\utils
+Folder: utils
+TS Files:
+  - remove-and-track-import.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface\src\lib
+Folder: lib
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface\src\lib\api
+Folder: api
+TS Files:
+  - constants.ts
+  - injection-tokens.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface\src\lib\model
+Folder: model
+TS Files:
+  - config-key.model.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-integration-interface\src\lib\services
+Folder: services
+TS Files:
+  - app-config-service.ts
+  - app-state.service.ts
+  - configuration.service.spec.ts
+  - configuration.service.ts
+  - image-repository.service.ts
+  - image-repositoryservice.spec.ts
+  - parameters.service.spec.ts
+  - parameters.service.ts
+  - portal-message.service.spec.ts
+  - portal-message.service.ts
+  - remote-components.service.ts
+  - shell-capability.service.ts
+  - theme.service.ts
+  - user.service.spec.ts
+  - user.service.ts
+  - workspace.service.spec.ts
+  - workspace.service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\mocks
+Folder: mocks
+TS Files:
+  - index.ts
+  - slot-service-mock.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\testing
+Folder: testing
+TS Files:
+  - index.ts
+  - slot.harness.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\migrations\v6
+Folder: v6
+TS Files:
+  - migrate-onecx-to-v6.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\src\lib
+Folder: lib
+TS Files:
+  - angular-remote-components.module.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\src\lib\components
+Folder: components
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\src\lib\model
+Folder: model
+TS Files:
+  - remote-component.ts
+  - remote-webcomponent.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\src\lib\services
+Folder: services
+TS Files:
+  - permission.service.ts
+  - slot.service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\src\lib\utils
+Folder: utils
+TS Files:
+  - provide-translate-service-for-root.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-remote-components\src\lib\components\slot
+Folder: slot
+TS Files:
+  - slot.component.spec.ts
+  - slot.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-standalone-shell\assets
+Folder: assets
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-standalone-shell\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-standalone-shell\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-standalone-shell\migrations\v6
+Folder: v6
+TS Files:
+  - migrate-onecx-to-v6.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-standalone-shell\src\lib
+Folder: lib
+TS Files:
+  - standalone-shell.module.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-standalone-shell\src\lib\components
+Folder: components
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-standalone-shell\src\lib\utils
+Folder: utils
+TS Files:
+  - expose-standalone.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-standalone-shell\src\lib\components\standalone-shell-viewport
+Folder: standalone-shell-viewport
+TS Files:
+  - standalone-shell-viewport.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-testing\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-testing\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-testing\migrations\v6
+Folder: v6
+TS Files:
+  - migrate-onecx-to-v6.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-testing\src\lib
+Folder: lib
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-testing\src\lib\harnesses
+Folder: harnesses
+TS Files:
+  - button.harness.ts
+  - div.harness.ts
+  - input.harness.ts
+  - list-item.harness.ts
+  - menu-item-with-icon.harness.ts
+  - menu-item.harness.ts
+  - p.harness.ts
+  - span.harness.ts
+  - table-header-column.harness.ts
+  - table-row.harness.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-testing\src\lib\mocks
+Folder: mocks
+TS Files:
+  - IntersectionObserverMock.ts
+  - OriginMock.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-testing\src\lib\utils
+Folder: utils
+TS Files:
+  - waitForDeferredViewsToBeRendered.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-testing\src\lib\harnesses\primeng
+Folder: primeng
+TS Files:
+  - p-accordion-tab.harness.ts
+  - p-accordion.harness.ts
+  - p-breadcrumb.harness.ts
+  - p-button-directive.harness.ts
+  - p-button.harness.ts
+  - p-chart.harness.ts
+  - p-checkbox.harness.ts
+  - p-chip.harness.ts
+  - p-dialog.harness.ts
+  - p-menu-item.harness.ts
+  - p-menu.harness.ts
+  - p-menubar.harness.ts
+  - p-multiSelect.harness.ts
+  - p-multiSelectListItem.harness.ts
+  - p-paginator.harness.ts
+  - p-panelmenu-item.harness.ts
+  - p-panelmenu.harness.ts
+  - p-password.harness.ts
+  - p-picklist.harness.ts
+  - p-select.harness.ts
+  - p-selectButton.harness.ts
+  - p-tableCheckbox.harness.ts
+  - p-togglebutton.harness.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-testing\src\lib\harnesses\utils
+Folder: utils
+TS Files:
+  - primeicon.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\assets
+Folder: assets
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\guards
+Folder: guards
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\mocks
+Folder: mocks
+TS Files:
+  - guards-gatherer-mock.ts
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\style
+Folder: style
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\theme
+Folder: theme
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\assets\i18n
+Folder: i18n
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\guards\src
+Folder: src
+TS Files:
+  - declarations.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\guards\src\model
+Folder: model
+TS Files:
+  - guard-navigation.model.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\guards\src\services
+Folder: services
+TS Files:
+  - guards-gatherer.service.spec.ts
+  - guards-gatherer.service.ts
+  - guards-navigation-controller.service.spec.ts
+  - guards-navigation-controller.service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\guards\src\utils
+Folder: utils
+TS Files:
+  - activate-guards-wrapper.utils.spec.ts
+  - activate-guards-wrapper.utils.ts
+  - deactivate-guards-wrapper.utils.spec.ts
+  - deactivate-guards-wrapper.utils.ts
+  - guards-utils.utils.spec.ts
+  - guards-utils.utils.ts
+  - wrap-guards.utils.spec.ts
+  - wrap-guards.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\migrations\test-utils
+Folder: test-utils
+TS Files:
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\migrations\v6
+Folder: v6
+TS Files:
+  - add-import-meta-to-webpack-config.spec.ts
+  - add-import-meta-to-webpack-config.ts
+  - migrate-onecx-to-v6.ts
+  - replace-translation-path-factories.spec.ts
+  - replace-translation-path-factories.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\migrations\v6\utils
+Folder: utils
+TS Files:
+  - extract-translation-path.ts
+  - update-translation-path-imports.ts
+  - update-translation-path-provider.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\src\lib
+Folder: lib
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\src\lib\components
+Folder: components
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\src\lib\model
+Folder: model
+TS Files:
+  - injection-tokens.ts
+  - remote-component-config.model.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\src\lib\providers
+Folder: providers
+TS Files:
+  - angular-utils.providers.ts
+  - permission-service.providers.ts
+  - translation-path-from-meta.provider.spec.ts
+  - translation-path-from-meta.providers.ts
+  - translation-path.providers.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\src\lib\services
+Folder: services
+TS Files:
+  - permission.service.spec.ts
+  - permission.service.ts
+  - translation-cache.service.spec.ts
+  - translation-cache.service.ts
+  - translation-connection.service.spec.ts
+  - translation-connection.service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\src\lib\utils
+Folder: utils
+TS Files:
+  - async-translate-loader.utils.spec.ts
+  - async-translate-loader.utils.ts
+  - caching-translate-loader.utils.spec.ts
+  - caching-translate-loader.utils.ts
+  - create-translate-loader.utils.spec.ts
+  - create-translate-loader.utils.ts
+  - deep-merge.utils.ts
+  - dynamic-locale-id.utils.spec.ts
+  - dynamic-locale-id.utils.ts
+  - has-permission-checker-factory.spec.ts
+  - has-permission-checker-factory.ts
+  - has-permission-checker.ts
+  - multi-language-missing-translation-handler.utils.spec.ts
+  - multi-language-missing-translation-handler.utils.ts
+  - portal-api-configuration.utils.ts
+  - provide-connection-service.ts
+  - remote-component-translation-path-factory.utils.ts
+  - scope.utils.ts
+  - translate.combined.loader.ts
+  - translation-path-factory.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\src\lib\components\portal-page
+Folder: portal-page
+TS Files:
+  - portal-page.component.spec.ts
+  - portal-page.component.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\style\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\style\src\api
+Folder: api
+TS Files:
+  - constants.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\style\src\utils
+Folder: utils
+TS Files:
+  - app-styles-lifecycle.utils.ts
+  - app-styles-scope.utils.ts
+  - app-styles-usage.utils.ts
+  - dom-style.utils.ts
+  - fetch-app-css.util.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\theme\primeng
+Folder: primeng
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\theme\primeng\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\theme\primeng\src\preset
+Folder: preset
+TS Files:
+  - custom-preset.ts
+  - default-theme-variables.ts
+  - preset-variables.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\theme\primeng\src\services
+Folder: services
+TS Files:
+  - custom-use-style.service.spec.ts
+  - custom-use-style.service.ts
+  - theme-config.service.spec.ts
+  - theme-config.service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\theme\primeng\src\utils
+Folder: utils
+TS Files:
+  - app-styles-initializer.ts
+  - application-config.ts
+  - create-color-palette.spec.ts
+  - create-color-palette.ts
+  - normalize-preset-keys.utils.spec.ts
+  - normalize-preset-keys.utils.ts
+  - theme-config.spec.ts
+  - theme-config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-utils\theme\primeng\src\preset\component-presets
+Folder: component-presets
+TS Files:
+  - autocomplete.ts
+  - breadcrumb.ts
+  - button.ts
+  - datatable.ts
+  - dialog.ts
+  - fieldset.ts
+  - fileupload.ts
+  - floatlabel.ts
+  - inputtext.ts
+  - paginator.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-webcomponents\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-webcomponents\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-webcomponents\migrations\v6
+Folder: v6
+TS Files:
+  - migrate-onecx-to-v6.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-webcomponents\src\lib
+Folder: lib
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\angular-webcomponents\src\lib\utils
+Folder: utils
+TS Files:
+  - dynamic-app-id.utils.ts
+  - webcomponent-bootstrap.utils.ts
+  - webcomponent-connector.utils.spec.ts
+  - webcomponent-connector.utils.ts
+  - webcomponent-router-initializer.utils.ts
+  - webcomponent-router.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src
+Folder: src
+TS Files:
+  - index.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\migrations\v5
+Folder: v5
+TS Files:
+  - warn-for-events-publisher-navigated.ts
+  - warn-for-events-topic-navigated.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\migrations\v6
+Folder: v6
+TS Files:
+  - migrate-onecx-to-v6.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib
+Folder: lib
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\services
+Folder: services
+TS Files:
+  - image-repository.service.spec.ts
+  - image-repository.service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics
+Folder: topics
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\configuration
+Folder: configuration
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\current-location
+Folder: current-location
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\current-mfe
+Folder: current-mfe
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\current-page
+Folder: current-page
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\current-theme
+Folder: current-theme
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\current-workspace
+Folder: current-workspace
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\events
+Folder: events
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\global-error
+Folder: global-error
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\global-loading
+Folder: global-loading
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\image-repository
+Folder: image-repository
+TS Files:
+  - image-repository.model.ts
+  - image-repository.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\is-authenticated
+Folder: is-authenticated
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\message
+Folder: message
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\parameters
+Folder: parameters
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\permissions
+Folder: permissions
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\permissions-rpc
+Folder: permissions-rpc
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\remote-components
+Folder: remote-components
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\resized-events
+Folder: resized-events
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\user-profile
+Folder: user-profile
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\configuration\v1
+Folder: v1
+TS Files:
+  - configuration.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\current-location\v1
+Folder: v1
+TS Files:
+  - current-location.model.ts
+  - current-location.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\current-mfe\v1
+Folder: v1
+TS Files:
+  - current-mfe.topic.ts
+  - mfe-info.model.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\current-page\v1
+Folder: v1
+TS Files:
+  - current-page.spec.ts
+  - current-page.topic.ts
+  - page-info.model.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\current-theme\v1
+Folder: v1
+TS Files:
+  - current-theme.topic.ts
+  - theme.model.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\current-workspace\v1
+Folder: v1
+TS Files:
+  - current-workspace.topic.ts
+  - endpoint.model.ts
+  - mfe-portal-registration.model.ts
+  - route.model.ts
+  - workspace.model.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\events\v1
+Folder: v1
+TS Files:
+  - event-type.ts
+  - events-topic.ts
+  - navigated-event-payload.ts
+  - navigated-event-type.ts
+  - topic-event-type.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\global-error\v1
+Folder: v1
+TS Files:
+  - global-error.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\global-loading\v1
+Folder: v1
+TS Files:
+  - global-loading.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\is-authenticated\v1
+Folder: v1
+TS Files:
+  - isAuthenticated.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\message\v1
+Folder: v1
+TS Files:
+  - message.model.ts
+  - message.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\parameters\v1
+Folder: v1
+TS Files:
+  - parameters.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\permissions\v1
+Folder: v1
+TS Files:
+  - permissions.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\permissions-rpc\v1
+Folder: v1
+TS Files:
+  - permissions-rpc.model.ts
+  - permissions-rpc.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\remote-components\v1
+Folder: v1
+TS Files:
+  - remote-component.model.ts
+  - remote-components-info.model.ts
+  - remote-components.topic.ts
+  - slot.model.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\resized-events\v1
+Folder: v1
+TS Files:
+  - resized-event-type.ts
+  - resized-events.spec.ts
+  - resized-events.topic.ts
+  - resized-update-requested-type.ts
+  - slot-groups-resized-type.ts
+  - slots-resized-type.ts
+  - topic-resized-event-type.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\integration-interface\src\lib\topics\user-profile\v1
+Folder: v1
+TS Files:
+  - user-profile.model.ts
+  - user-profile.topic.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator\migrations
+Folder: migrations
+TS Files:
+  - index.ts
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator\migrations\test-utils
+Folder: test-utils
+TS Files:
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator\migrations\v6
+Folder: v6
+TS Files:
+  - migrate-onecx-to-v6.ts
+  - replace-filter-query-params-functions.spec.ts
+  - replace-filter-query-params-functions.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator\src\lib
+Folder: lib
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator\src\lib\store-connector
+Folder: store-connector
+TS Files:
+  - navigated-event-store-connector-service.ts
+  - onecx-actions.ts
+  - onecx-reducer.ts
+  - onecx-selectors.ts
+  - onecx-state.ts
+  - permissions-store-connector-service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator\src\lib\utils
+Folder: utils
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator\src\lib\utils\effects
+Folder: effects
+TS Files:
+  - create-query-params-effect.ts
+  - filter-for-navigated-to.ts
+  - filter-for-only-query-params-changed.ts
+  - filter-for-query-params-changed.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator\src\lib\utils\local-storage
+Folder: local-storage
+TS Files:
+  - create-nested-key-configuration.ts
+  - lazy-loading-merge-reducer.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-accelerator\src\lib\utils\selectors
+Folder: selectors
+TS Files:
+  - create-child-selectors.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-integration-interface\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-integration-interface\src\lib
+Folder: lib
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-integration-interface\src\lib\store-connector
+Folder: store-connector
+TS Files:
+  - onecx-actions.ts
+  - onecx-reducer.ts
+  - onecx-selectors.ts
+  - onecx-state.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\ngrx-integration-interface\src\lib\store-connector\store-connectors
+Folder: store-connectors
+TS Files:
+  - app-config-store-connector-service.spec.ts
+  - app-config-store-connector-service.ts
+  - configuration-store-connector-service.spec.ts
+  - configuration-store-connector-service.ts
+  - current-mfe-store-connector-service.spec.ts
+  - current-mfe-store-connector-service.ts
+  - current-page-store-connector-service.spec.ts
+  - current-page-store-connector-service.ts
+  - current-theme-store-connector-service.spec.ts
+  - current-theme-store-connector-service.ts
+  - current-workspace-store-connector-service.spec.ts
+  - current-workspace-store-connector-service.ts
+  - index.ts
+  - navigated-event-store-connector-service.spec.ts
+  - navigated-event-store-connector-service.ts
+  - permissions-store-connector-service.spec.ts
+  - permissions-store-connector-service.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src
+Folder: src
+TS Files:
+  - index.ts
+  - test-setup.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib
+Folder: lib
+No .ts files
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\angular
+Folder: angular
+TS Files:
+  - html-templates.utils.ts
+  - index.ts
+  - parameters.utils.ts
+  - replacement-in-files.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\common-migrations
+Folder: common-migrations
+TS Files:
+  - common-migrate-onecx-to-v6.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\migrations
+Folder: migrations
+TS Files:
+  - jest.config.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\utils
+Folder: utils
+TS Files:
+  - detect-method-calls-in-files.ts
+  - detect-method-calls-in-files.utils.ts
+  - import-statements.utils.ts
+  - patterns.utils.ts
+  - print-warnings.ts
+  - print-warnings.utils.ts
+  - typescript-files.utils.ts
+  - update-gitignore.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\angular\model
+Folder: model
+TS Files:
+  - matching-module.model.ts
+  - module.model.ts
+  - provider.model.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\angular\utils
+Folder: utils
+TS Files:
+  - patterns.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\angular\utils\detection
+Folder: detection
+TS Files:
+  - detect-modules-importing-module.utils.ts
+  - detect-variables-with-module.utils.ts
+  - detect-variables-with-provider.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\angular\utils\modification
+Folder: modification
+TS Files:
+  - add-provider-import-if-does-not-exist.utils.ts
+  - add-provider-import-in-file.utils.ts
+  - add-provider-in-module-if-does-not-exist.utils.ts
+  - add-provider-in-module.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\angular\utils\validation
+Folder: validation
+TS Files:
+  - is-provider-import-in-file.utils.ts
+  - is-provider-in-module.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\migrations\v6
+Folder: v6
+TS Files:
+  - remove-pia-imports.spec.ts
+  - remove-pia-imports.ts
+  - replace-pia-imports.spec.ts
+  - replace-pia-imports.ts
+  - replace-portal-core-module.spec.ts
+  - replace-portal-core-module.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\utils\detection
+Folder: detection
+TS Files:
+  - detect-variables-with-identifier.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\utils\modification
+Folder: modification
+TS Files:
+  - add-new-import.utils.ts
+  - add-to-first-import.utils.ts
+  - remove-import-specifier.utils.spec.ts
+  - remove-import-specifier.utils.ts
+  - remove-json-references.utils.ts
+  - replace-tag-in-html.utils.ts
+  - update-json-files.utils.ts
+  - update-style-sheet.utils.spec.ts
+  - update-style-sheet.utils.ts
+  - update-style-sheets.utils.ts
+
+Path: D:\onecx\Apps\onecx-portal-ui-libs\libs\nx-migration-utils\src\lib\utils\validation
+Folder: validation
+TS Files:
+  - has-html-tag.utils.ts
+  - is-file-style-sheet.utils.ts
+  - is-import-in-content.utils.ts
+  - is-import-in-file-content.utils.ts
+  - is-namespace-import-in-content.utils.ts
+
