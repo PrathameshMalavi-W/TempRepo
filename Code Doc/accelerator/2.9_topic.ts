@@ -17,20 +17,37 @@ import { TopicResolveMessage } from "./topic-resolve-message";
 import "./2.2_declarations";
 import { increaseInstanceCount, isStatsEnabled } from "./utils/logs.utils";
 
+// Topic: inherits publish logic adds subscribe logic
+//    something you can publish()
+//    something you can subscribe() to it own the BehaviorSubject, it expose the methods subscribe(), asObservable(), .pipe(...)
 export class Topic<T> extends TopicPublisher<T> implements Subscribable<T> {
+  // A Promise that resolves when the first value arrives. To ensure data exists before using it.  An async signal.  => “Wait until the Topic is initialized”
   protected isInitializedPromise: Promise<void>;
+
+  // Topic stores messages, not raw values.
+  // Message contains: data, timestamp, id
+  // Needed for: ordering, compatibility, conflict resolution
   protected data = new BehaviorSubject<TopicDataMessage<T> | undefined>(
     undefined
   );
 
+  // Tracks whether topic has received its first valid value.
   protected isInit = false;
+
   private resolveInitPromise!: (value: void | PromiseLike<void>) => void;
+
   private readonly windowEventListener = (m: MessageEvent<TopicMessage>) =>
     this.onWindowMessage(m);
+
+  // publishBroadcastChannel → in TopicPublisher readBroadcastChannel → here, for receiving
   protected readonly readBroadcastChannel: BroadcastChannel | undefined;
+
+  // **************************************************************************************************************************************************************
 
   constructor(name: string, version: number, sendGetMessage = true) {
     super(name, version);
+
+    // MFEs load independently so repeatedly initializing.
     window["@onecx/accelerator"] ??= {};
     window["@onecx/accelerator"].topic ??= {};
     window["@onecx/accelerator"].topic.initDate ??= Date.now();
@@ -50,13 +67,17 @@ export class Topic<T> extends TopicPublisher<T> implements Subscribable<T> {
       }
     }
 
+    // optional metrics.
     if (isStatsEnabled()) {
       increaseInstanceCount(this.name);
     }
 
+    // Same pattern as publish() Promise returned to consumers Resolver stored
+    // Called later when first value arrives
     this.isInitializedPromise = new Promise<void>((resolve) => {
-      this.resolveInitPromise = resolve;
+      this.resolveInitPromise  = resolve;
     });
+
     window.addEventListener("message", this.windowEventListener);
     this.readBroadcastChannel?.addEventListener("message", (m) =>
       this.onBroadcastChannelMessage(m)
