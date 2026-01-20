@@ -2033,3 +2033,298 @@ export const APPLICATION_NAME = new InjectionToken<string>('APPLICATION_NAME')
 
 ```
 
+
+
+
+********************************************************************************************************************************
+
+Folder => onecx-portal-ui-libs > libs > angular-integration-interface > mocks
+
+File : index.ts
+```ts
+export * from './app-config-service-mock'
+export * from './app-state-service-mock'
+export * from './configuration-service-mock'
+export * from './portal-message-service-mock'
+export * from './remote-components-service-mock'
+export * from './user-service-mock'
+export * from './shell-capability-service-mock'
+export * from '@onecx/accelerator'
+```
+
+File : app-config-service-mock.ts
+```ts
+import { Injectable } from '@angular/core'
+import { BehaviorSubject } from 'rxjs'
+import { Config } from '@onecx/integration-interface'
+import { AppConfigService } from '@onecx/angular-integration-interface'
+
+export function provideAppConfigServiceMock() {
+  return [AppConfigServiceMock, { provide: AppConfigService, useExisting: AppConfigServiceMock }]
+}
+@Injectable()
+export class AppConfigServiceMock {
+  config$ = new BehaviorSubject<{ [key: string]: string }>({})
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  public init(baseUrl: string): Promise<void> {
+    return new Promise((resolve) => {
+      const mockConfig: Config = { key: 'config' }
+      this.config$.next(mockConfig)
+      resolve()
+    })
+  }
+
+  public getProperty(key: string): string | undefined {
+    return this.config$.getValue()?.[key]
+  }
+
+  public setProperty(key: string, val: string) {
+    this.config$.next({ ...this.config$.value, [key]: val })
+  }
+
+  public getConfig(): { [key: string]: string } {
+    return this.config$.getValue()
+  }
+}
+
+```
+
+
+File : app-state-service-mock.ts
+```ts
+import { Injectable } from '@angular/core'
+import { CurrentLocationTopicPayload, MfeInfo, PageInfo, Workspace } from '@onecx/integration-interface'
+// eslint-disable-next-line
+import { AppStateService } from '@onecx/angular-integration-interface'
+import { FakeTopic } from '@onecx/accelerator'
+
+export function provideAppStateServiceMock() {
+  return [AppStateServiceMock, { provide: AppStateService, useExisting: AppStateServiceMock }]
+}
+
+@Injectable()
+export class AppStateServiceMock {
+  globalError$ = new FakeTopic()
+  globalLoading$ = new FakeTopic(false)
+  currentMfe$ = new FakeTopic<MfeInfo>({
+    mountPath: '/',
+    remoteBaseUrl: '.',
+    baseHref: '/',
+    shellName: 'test',
+    appId: 'test',
+    productName: 'test',
+  })
+  currentPage$ = new FakeTopic<PageInfo | undefined>(undefined)
+  currentPortal$ = new FakeTopic<Workspace>({
+    baseUrl: '/',
+    microfrontendRegistrations: [],
+    portalName: 'Test portal',
+    workspaceName: 'Test portal',
+  })
+  currentWorkspace$ = new FakeTopic<Workspace>({
+    baseUrl: '/',
+    microfrontendRegistrations: [],
+    portalName: 'Test workspace',
+    workspaceName: 'Test workspace',
+  })
+  currentLocation$ = new FakeTopic<CurrentLocationTopicPayload>({
+    url: '/',
+    isFirst: true,
+  })
+  isAuthenticated$ = new FakeTopic<null>(null)
+}
+
+```
+
+
+File : configuration-service-mock.ts
+```ts
+import { Injectable } from '@angular/core'
+import { Config } from '@onecx/integration-interface'
+import { CONFIG_KEY } from '@onecx/angular-integration-interface'
+import { firstValueFrom } from 'rxjs/internal/firstValueFrom'
+import { ConfigurationService } from '@onecx/angular-integration-interface'
+import { FakeTopic } from '@onecx/accelerator'
+
+export function provideConfigurationServiceMock() {
+  return [ConfigurationServiceMock, { provide: ConfigurationService, useExisting: ConfigurationServiceMock }]
+}
+
+@Injectable({ providedIn: 'root' })
+export class ConfigurationServiceMock {
+  config$ = new FakeTopic<Config>({})
+
+  private resolveInitPromise!: (value: void | PromiseLike<void>) => void
+  private isInitializedPromise: Promise<void>
+
+  constructor() {
+    this.isInitializedPromise = new Promise<void>((resolve) => {
+      this.resolveInitPromise = resolve
+    })
+  }
+
+  public init(config?: Config): Promise<boolean> {
+    return this.config$.publish(config ?? {}).then(() => {
+      this.resolveInitPromise()
+      return true
+    })
+  }
+
+  get isInitialized(): Promise<void> {
+    return this.isInitializedPromise
+  }
+
+  public getProperty(key: CONFIG_KEY): Promise<string | undefined> {
+    return firstValueFrom(this.config$.asObservable()).then((config) => config[key])
+  }
+
+  public async setProperty(key: string, val: string): Promise<void> {
+    const currentValues = await firstValueFrom(this.config$.asObservable())
+    currentValues[key] = val
+    await this.config$.publish(currentValues)
+  }
+
+  public getConfig(): Promise<Config | undefined> {
+    return firstValueFrom(this.config$.asObservable())
+  }
+}
+
+```
+
+
+File : portal-message-service-mockts
+```ts
+import { Injectable } from '@angular/core'
+import { FakeTopic } from '@onecx/accelerator'
+import { Message as PortalMessage, PortalMessageService } from '@onecx/angular-integration-interface'
+import { Message } from '@onecx/integration-interface'
+
+export function providePortalMessageServiceMock() {
+  return [PortalMessageServiceMock, { provide: PortalMessageService, useExisting: PortalMessageServiceMock }]
+}
+@Injectable({ providedIn: 'any' })
+export class PortalMessageServiceMock {
+  message$ = new FakeTopic<Message>()
+
+  success(msg: PortalMessage) {
+    this.addTranslated('success', msg)
+  }
+
+  info(msg: PortalMessage) {
+    this.addTranslated('info', msg)
+  }
+
+  error(msg: PortalMessage) {
+    this.addTranslated('error', msg)
+  }
+
+  warning(msg: PortalMessage) {
+    this.addTranslated('warning', msg)
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  private addTranslated(severity: string, msg: PortalMessage) {
+    this.message$.publish({
+      ...msg,
+      severity: severity,
+    })
+  }
+}
+
+```
+
+
+File : remote-components-service-mock.ts
+```ts
+import { Injectable } from '@angular/core'
+import { RemoteComponentsInfo } from '@onecx/integration-interface'
+import { RemoteComponentsService } from '@onecx/angular-integration-interface'
+import { FakeTopic } from '@onecx/accelerator'
+
+export function provideRemoteComponentsServiceMock() {
+  return [RemoteComponentsServiceMock, { provide: RemoteComponentsService, useExisting: RemoteComponentsServiceMock }]
+}
+@Injectable({ providedIn: 'root' })
+export class RemoteComponentsServiceMock {
+  remoteComponents$ = new FakeTopic<RemoteComponentsInfo>()
+}
+
+```
+
+File : shell-capability-service-mock.ts
+```ts
+import { Injectable } from '@angular/core'
+import { Capability, ShellCapabilityService } from '@onecx/angular-integration-interface'
+
+export function provideShellCapabilityServiceMock() {
+  return [ShellCapabilityServiceMock, { provide: ShellCapabilityService, useExisting: ShellCapabilityServiceMock }]
+}
+
+@Injectable()
+export class ShellCapabilityServiceMock {
+  static capabilities: Capability[] = []
+
+  static setCapabilities(capabilities: Capability[]): void {
+    ShellCapabilityServiceMock.capabilities = capabilities
+  }
+
+  hasCapability(capability: Capability): boolean {
+    return ShellCapabilityServiceMock.capabilities?.includes(capability) ?? false
+  }
+}
+
+```
+
+File : user-service-mock.ts
+```ts
+import { Injectable } from '@angular/core'
+import { BehaviorSubject, Observable } from 'rxjs'
+import { UserProfile } from '@onecx/integration-interface'
+import { UserService } from '@onecx/angular-integration-interface'
+import { FakeTopic } from '@onecx/accelerator'
+
+export function provideUserServiceMock() {
+  return [UserServiceMock, { provide: UserService, useExisting: UserServiceMock }]
+}
+
+@Injectable({ providedIn: 'root' })
+export class UserServiceMock {
+  profile$ = new FakeTopic<UserProfile>()
+  permissionsTopic$ = new FakeTopic<string[]>(['mocked-permission'])
+  lang$ = new BehaviorSubject('en')
+
+  async hasPermission(permissionKey: string | string[]): Promise<boolean> {
+    if (Array.isArray(permissionKey)) {
+      return permissionKey.every(async (key) => await this.hasPermission(key))
+    }
+
+    const result = this.permissionsTopic$.getValue()?.includes(permissionKey)
+    if (!result) {
+      console.log(`👮‍♀️ No permission for: ${permissionKey}`)
+    }
+    return !!result
+  }
+
+  getPermissions(): Observable<string[]> {
+    return this.permissionsTopic$.asObservable()
+  }
+
+  determineLanguage(): string | undefined {
+    return 'mocked-lang'
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  extractPermissions(userProfile: UserProfile): string[] | null {
+    return ['mocked-permission']
+  }
+
+  get isInitialized(): Promise<void> {
+    return Promise.resolve()
+  }
+}
+
+export type MockUserService = UserServiceMock
+
+```
+

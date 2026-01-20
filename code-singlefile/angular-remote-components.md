@@ -7,28 +7,15 @@ FIle => onecx-portal-ui-libs > libs > angular-remote-components > src > index.ts
 
 ```ts
 
-// services
-export * from './lib/services/app-config-service'
-export * from './lib/services/app-state.service'
-export * from './lib/services/configuration.service'
-export * from './lib/services/user.service'
-export * from './lib/services/portal-message.service'
-export * from './lib/services/theme.service'
-export * from './lib/services/remote-components.service'
-export * from './lib/services/workspace.service'
-export * from './lib/services/shell-capability.service'
-export * from './lib/services/image-repository.service'
+export * from './lib/model/remote-component'
+export * from './lib/model/remote-webcomponent'
+export * from './lib/components/slot/slot.component'
+export * from './lib/angular-remote-components.module'
+export * from './lib/services/slot.service'
+export * from './lib/services/permission.service'
+export * from './lib/utils/provide-translate-service-for-root.utils'
 
-// models
-export * from './lib/model/config-key.model'
-
-// core
-export * from './lib/api/injection-tokens'
-
-// utils
-
-export { MfeInfo, Theme } from '@onecx/integration-interface'
-
+export { RemoteComponentConfig, REMOTE_COMPONENT_CONFIG } from '@onecx/angular-utils'
 
 ```
 
@@ -1263,3 +1250,173 @@ export function provideTranslateServiceForRoot(config: TranslateModuleConfig = {
 
 ```
 
+
+
+********************************************************************************************************************************
+
+FIle => onecx-portal-ui-libs > libs > angular-remote-components > mocks >
+
+File : index.ts
+```ts
+export * from './slot-service-mock'
+```
+
+File : slot-service-mocks.ts
+```ts
+import { Injectable } from '@angular/core'
+import { SlotComponentConfiguration } from '@onecx/angular-remote-components'
+import { BehaviorSubject, Observable, map } from 'rxjs'
+
+@Injectable()
+export class SlotServiceMock {
+  _componentsDefinedForSlot: BehaviorSubject<{
+    [slot_key: string]: SlotComponentConfiguration[]
+  }> = new BehaviorSubject({})
+  isSomeComponentDefinedForSlot(slotName: string): Observable<boolean> {
+    return this._componentsDefinedForSlot.pipe(
+      map((assignments) => {
+        return slotName in assignments && assignments[slotName].length > 0
+      })
+    )
+  }
+
+  getComponentsForSlot(slotName: string) {
+    return this._componentsDefinedForSlot.pipe(
+      map((assignments) => {
+        return Object.keys(assignments).includes(slotName) ? assignments[slotName] : []
+      })
+    )
+  }
+
+  assignComponentsToSlot(componentConfigurations: SlotComponentConfiguration[], slotName: string) {
+    const currentAssignments = this._componentsDefinedForSlot.getValue()
+    this._componentsDefinedForSlot.next({
+      ...currentAssignments,
+      [slotName]:
+        slotName in currentAssignments
+          ? currentAssignments[slotName].concat(...componentConfigurations)
+          : [...componentConfigurations],
+    })
+  }
+
+  assignComponentToSlot(componentConfiguration: SlotComponentConfiguration, slotName: string) {
+    const currentAssignments = this._componentsDefinedForSlot.getValue()
+    this._componentsDefinedForSlot.next({
+      ...currentAssignments,
+      [slotName]:
+        slotName in currentAssignments
+          ? currentAssignments[slotName].concat(componentConfiguration)
+          : [componentConfiguration],
+    })
+  }
+
+  clearAssignments() {
+    this._componentsDefinedForSlot.next({})
+  }
+}
+
+```
+
+
+
+
+********************************************************************************************************************************
+
+FIle => onecx-portal-ui-libs > libs > angular-remote-components > testing >
+
+File : index.ts
+```ts
+export * from './slot.harness'
+```
+
+File : slot-harness.ts
+```ts
+import {
+  BaseHarnessFilters,
+  ContentContainerComponentHarness,
+  HarnessPredicate,
+  TestElement,
+} from '@angular/cdk/testing'
+
+export interface SlotHarnessFilters extends BaseHarnessFilters {
+  name?: string
+}
+
+/**
+ * Harness for interacting with an OCX slot component in tests.
+ *
+ * Provides methods to inspect slot div containers, their styles, classes,
+ * and content when multiple components are assigned to a slot.
+ */
+export class SlotHarness extends ContentContainerComponentHarness {
+  static readonly hostSelector = 'ocx-slot'
+
+  static with(options: SlotHarnessFilters = {}): HarnessPredicate<SlotHarness> {
+    return new HarnessPredicate(SlotHarness, options).addOption('name', options.name, (harness, name) =>
+      HarnessPredicate.stringMatches(harness.getName(), name)
+    )
+  }
+
+  /**
+   * Gets a child element within the slot by its tag name.
+   * @param tagName - The tag name of the child element to retrieve.
+   * @returns A promise that resolves to the child element or null if not found.
+   */
+  async getElement(tagName: string): Promise<TestElement | null> {
+    return await this.documentRootLocatorFactory().locatorForOptional(tagName)()
+  }
+
+  /**
+   * Gets the name of the slot from either the 'name' attribute or 'ng-reflect-name' attribute.
+   * Checks both for robust detection during different Angular compilation modes.
+   * @returns Promise that resolves to the slot name or null if not found.
+   */
+  async getName(): Promise<string | null> {
+    const host = await this.host()
+
+    const nameAttr = await host.getAttribute('name')
+    if (nameAttr !== null) {
+      return nameAttr
+    }
+
+    const reflectName = await host.getAttribute('ng-reflect-name')
+    if (reflectName !== null) {
+      return reflectName
+    }
+
+    return null
+  }
+
+  /**
+   * Gets a specific CSS property value from a child element within the slot by its tag name.
+   * @param tagName - The tag name of the child element.
+   * @param property - The CSS property name to retrieve.
+   * @returns Promise that resolves to the CSS property value or empty string if element not found.
+   */
+  async getComponentCssProperty(tagName: string, property: string): Promise<string> {
+    const element = await this.getElement(tagName)
+    if (!element) {
+      return ''
+    }
+    return await element.getCssValue(property)
+  }
+
+  /**
+   * Gets the list of CSS classes applied to a child element within the slot by its tag name.
+   * @param tagName - The tag name of the child element.
+   * @returns Promise that resolves to an array of CSS class names or empty array if element not found.
+   */
+  async getComponentClasses(tagName: string): Promise<string[]> {
+    const element = await this.getElement(tagName)
+    if (!element) {
+      return []
+    }
+    const attributeString = await element.getAttribute('class')
+    if (attributeString) {
+      return attributeString.trim().split(' ')
+    }
+    return []
+  }
+}
+
+```

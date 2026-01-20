@@ -1,0 +1,56 @@
+libs
+commit eeb356b5a7aab831aa86ea14a1fbfd08804dc084 (HEAD -> main, origin/main, origin/HEAD)  ation. All righ
+Author: Yuliia Melnyk <191982825+yulmelcorp@users.noreply.github.com>   \onecx\Apps\onecx-portal-ui-libs>
+Date:   Fri Jan 9 15:15:07 2026 +0100
+
+    fix: remove nx-release (#1129)  uthor: Yuliia Melnyk <191982825+yu
+
+
+shell
+commit 97c9a3b3705ce694a0b56d50be9660b5a92eacc1 (HEAD -> main, origin/main, origin/HEAD)
+Author: priyankaSandeepRade <245361893+priyankaSandeepRade@users.noreply.github.com>
+Date:   Mon Jan 5 14:53:38 2026 +0530
+feat: ImageService-in-libs (#871)
+
+
+
+
+
+Remaining
+shell-shared
+shell-assets
+shell-extras
+
+libs-nx-migration-utils.md
+libs-angular-accelerator
+
+
+
+
+
+
+completed
+libs-accelerator.md
+libs-angular-auth.md
+libs-angular-utils.md
+libs-angular-integration-interface.md
+libs-angular-remote-components.md
+libs-angular-standalone-shell.md
+libs-angular-testing.md
+libs-angular-utils.md
+
+
+libs-angular-webcomponents.md
+libs-integration-interface.md
+libs-ngrx-accelerator.md
+libs-ngrx-integration-interface.md
+
+
+
+
+
+
+image.png
+nx-migration-utils.md
+
+

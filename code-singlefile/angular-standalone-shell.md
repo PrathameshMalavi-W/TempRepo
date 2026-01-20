@@ -123,31 +123,6 @@ export class StandaloneShellViewportComponent implements AfterContentInit {
 
 ```
 
-********************************************************************************************************************************
-
-FIle => onecx-portal-ui-libs > libs > angular-standalone-shell > src > 
-providers
-
-
-```ts
-
-
-```
-
-
-
-********************************************************************************************************************************
-
-FIle => onecx-portal-ui-libs > libs > angular-standalone-shell > src > 
-models
-
-
-```ts
-
-
-```
-
-
 
 ********************************************************************************************************************************
 
@@ -278,4 +253,33 @@ export function provideStandaloneProviders(config?: Partial<ProvideStandalonePro
 }
 
 
+```
+
+
+
+
+********************************************************************************************************************************
+
+FIle => onecx-portal-ui-libs > libs > angular-standalone-shell > assets > styles.scss
+
+
+```scss
+@import 'primeflex/primeflex.scss';
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
+  background-color: var(--body-bg-color);
+  min-height: 100%;
+
+  a {
+    text-decoration: none;
+    color: var(--text-secondary-color);
+  }
+}
 ```
