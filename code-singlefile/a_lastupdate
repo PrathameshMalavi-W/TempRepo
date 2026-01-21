@@ -21,8 +21,6 @@ shell-shared
 shell-assets
 shell-extras
 
-libs-nx-migration-utils.md
-libs-angular-accelerator
 
 
 
@@ -31,6 +29,7 @@ libs-angular-accelerator
 
 completed
 libs-accelerator.md
+libs-angular-accelerator
 libs-angular-auth.md
 libs-angular-utils.md
 libs-angular-integration-interface.md
@@ -38,12 +37,12 @@ libs-angular-remote-components.md
 libs-angular-standalone-shell.md
 libs-angular-testing.md
 libs-angular-utils.md
-
-
 libs-angular-webcomponents.md
 libs-integration-interface.md
 libs-ngrx-accelerator.md
 libs-ngrx-integration-interface.md
+libs-nx-migration-utils.md
+
 
 
 
@@ -51,6 +50,5 @@ libs-ngrx-integration-interface.md
 
 
 image.png
-nx-migration-utils.md
 
 
