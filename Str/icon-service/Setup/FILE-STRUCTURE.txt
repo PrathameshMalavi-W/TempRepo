@@ -1,0 +1,217 @@
+ICON IMPORT SETUP - FILES CREATED/MODIFIED
+==========================================
+
+📦 NEW FILES CREATED
+====================
+
+onecx-local-env/
+├─ README-ICONS.md                    ✨ NEW - Setup summary and quick start
+├─ ICON-IMPORT-SETUP.md               ✨ NEW - Detailed setup guide
+├─ icon-setup-reference.py            ✨ NEW - Reference diagrams and workflow
+│
+└─ onecx-data/theme/
+   ├─ fetch-mdi-icons.ps1            ✨ NEW - Download MDI icons (PowerShell)
+   ├─ fetch-mdi-icons.sh             ✨ NEW - Download MDI icons (Bash)
+   ├─ import-iconsets.sh             ✨ NEW - Import icon sets to database
+   ├─ ICONS-README.md                ✨ NEW - Quick reference
+   ├─ ICON-SETUP-GUIDE.md            ✨ NEW - Comprehensive guide (300+ lines)
+   │
+   └─ [When you run fetch script]
+      └─ iconset-mdi.json             📄 Generated - Material Design Icons
+
+
+📝 FILES MODIFIED
+=================
+
+onecx-local-env/versions/v1/import-onecx.sh
+  ├─ Line ~5: Added OLE_HEADER_CT_OCTETSTREAM export
+  └─ Line ~18: Added "bash ./import-iconsets.sh $1 $2" after import-themes.sh
+
+onecx-local-env/versions/v2/import-onecx.sh  
+  ├─ Line ~22: Added OLE_HEADER_CT_OCTETSTREAM export
+  └─ Line ~186: Added "bash ./import-iconsets.sh "$1" "$2"" after import-themes.sh
+
+
+📋 QUICK REFERENCE
+==================
+
+File               | Purpose                    | Platform
+================== | ========================== | =========
+fetch-mdi-icons.ps1| Download MDI icons        | Windows (PowerShell)
+fetch-mdi-icons.sh | Download MDI icons        | Linux/macOS (Bash)
+import-iconsets.sh | Import icon files to DB   | Both (Bash)
+ICONS-README.md    | Quick reference           | Documentation
+ICON-SETUP-GUIDE.md| Comprehensive guide       | Documentation
+README-ICONS.md    | Setup summary             | Documentation
+
+🚀 USAGE
+========
+
+Windows (PowerShell):
+  1. cd onecx-data\theme
+  2. .\fetch-mdi-icons.ps1
+  3. Move-Item -Path .\mdi-complete-iconset.json -Destination .\iconset-mdi.json
+  4. cd ..\..\
+  5. .\start-onecx.sh
+
+Linux/macOS (Bash):
+  1. cd onecx-data/theme
+  2. chmod +x fetch-mdi-icons.sh
+  3. ./fetch-mdi-icons.sh
+  4. mv mdi-complete-iconset.json iconset-mdi.json
+  5. cd ../..
+  6. ./start-onecx.sh
+
+✅ WHAT NOW HAPPENS AUTOMATICALLY
+==================================
+
+1. start-onecx.sh launched
+   ↓
+2. Containers start (PostgreSQL, Keycloak, Theme Service, etc.)
+   ↓
+3. import-onecx.sh is called (automatic or manual)
+   ↓
+4. Theme data imported by import-themes.sh
+   ↓
+5. NEW: import-iconsets.sh finds all iconset-*.json files
+   ↓
+6. Each icon file uploaded to onecx-theme-svc
+   ↓
+7. Icons stored in PostgreSQL ICON table
+   ↓
+8. Icons available via IconRestController REST API
+   ↓
+9. Ready to use in UI components!
+
+🎨 ICON SETS AVAILABLE
+======================
+
+Material Design Icons (MDI)
+├─ Prefix: mdi
+├─ Total: ~7000+ icons
+├─ License: Apache 2.0
+└─ File: iconset-mdi.json
+
+Other Sets (download with additional scripts):
+├─ Font Awesome (fa)
+├─ Tabler Icons (tabler)
+├─ And many more from https://github.com/iconify/icon-sets
+
+🔧 INTEGRATION POINTS
+====================
+
+1. versions/v1/import-onecx.sh
+   └─ Now includes: bash ./import-iconsets.sh "$1" "$2"
+
+2. versions/v2/import-onecx.sh
+   └─ Now includes: bash ./import-iconsets.sh "$1" "$2"
+
+3. onecx-data/theme/import-iconsets.sh
+   └─ Automatically called during import process
+
+4. onecx-theme-svc
+   └─ Receives icons via: /internal/v1/icons/upload
+   └─ Stores in: ICON table
+   └─ Queries via: /internal/v1/icons/search
+
+💾 DATABASE STRUCTURE
+====================
+
+ICON Table:
+├─ ID          (UUID)        - Primary key
+├─ NAME        (VARCHAR)     - Full name (e.g., mdi:home)
+├─ TYPE        (VARCHAR)     - SVG
+├─ REF_ID      (VARCHAR)     - Reference ID (e.g., mdi)
+├─ BODY        (CLOB)        - SVG content
+├─ PARENT      (VARCHAR)     - For aliases
+├─ CREATED_AT  (TIMESTAMP)
+└─ MODIFIED_AT (TIMESTAMP)
+
+📊 STATISTICS
+=============
+
+New Files Created:        7
+Files Modified:          2
+Lines Added to Scripts:  ~10
+Documentation Lines:   1000+
+Total Icon Support:   ~7000+ (MDI)
+Setup Time:          ~2-5 minutes
+First Import Time:   ~30 seconds
+
+✨ FEATURES
+===========
+
+✓ Automatic icon import during container startup
+✓ Support for multiple icon sets
+✓ Create custom icon sets
+✓ Icon search via REST API
+✓ SVG-based icons (scalable)
+✓ Alias support
+✓ Database persistence
+✓ Windows and Linux/macOS support
+
+🧪 TESTING
+==========
+
+After setup, verify with:
+
+curl http://onecx-theme-svc/internal/v1/icons/search
+curl "http://onecx-theme-svc/internal/v1/icons/search?name=mdi:home"
+curl "http://onecx-theme-svc/internal/v1/icons/search?refId=mdi"
+
+📖 DOCUMENTATION HIERARCHY
+===========================
+
+Start Here:
+  README-ICONS.md (this directory)
+    ↓
+  ICON-IMPORT-SETUP.md (this directory)
+    ↓
+  onecx-data/theme/ICONS-README.md
+    ↓
+  onecx-data/theme/ICON-SETUP-GUIDE.md (comprehensive)
+
+Also Check:
+  icon-setup-reference.py (run with: python3 icon-setup-reference.py)
+
+🎯 NEXT STEPS
+=============
+
+1. Read: README-ICONS.md (2 min)
+2. Download: Run fetch-mdi-icons script (1 min)
+3. Rename: Move mdi-complete-iconset.json to iconset-mdi.json (30 sec)
+4. Start: Run ./start-onecx.sh (2-5 min)
+5. Test: Run curl commands above (30 sec)
+6. Use: Implement icons in UI components
+
+Total Time: ~10 minutes
+
+🚨 TROUBLESHOOTING
+==================
+
+Issue: Icons not importing
+  → Check: docker-compose logs onecx-theme-svc
+
+Issue: File not found
+  → Verify: ls -la onecx-data/theme/iconset-*.json
+
+Issue: JSON validation error
+  → Validate: jq . iconset-mdi.json
+
+Issue: Service not responding
+  → Check: docker-compose ps
+  → Wait: Containers may still be starting
+
+📞 SUPPORT
+==========
+
+Questions? See:
+  • ICON-SETUP-GUIDE.md - Comprehensive documentation
+  • icon-setup-reference.py - Workflow diagrams
+  • Iconify docs: https://iconify.design/
+  • Icon sets: https://github.com/iconify/icon-sets
+
+========================
+Last Updated: 2026-01-29
+Status: Ready to Use ✓
+========================

@@ -1,0 +1,28 @@
+
+We need a class in integration-interface that handles the communication for the loading of icons. This class should be in integration-interface and should that be used by a service in angular-integration-interface. Additionally we need a service in the Shell that does the actual loading of the icons via the shell-bff.
+
+The the communication between shell and the class in integration-interface is done via a new topic with the third constructor parameter set to false. This topic has payloads for two types of messages: IconRequested and IconsReceived
+
+The logic is similar to the one in TranslationCache.
+
+Make sure that the central icon cache in the window is there
+Check if the icon is in the cache and can be taken from there. If not
+Add a new entry for the requested icon with value undefined
+publish IconRequested
+Create the class (onecx-theme-icon-<classType>-<name>)
+Return the class name
+There should be two functions in the class. Both are returning the name of the CSS class with can be used to display the icon. One is directly returning the class name (string), the other is waiting for the icon to be loaded and and the class to be created and is then returning the class name (Promise<string|null>). The value null is returned when the BFF response indicated that the icon does not exist. The logic should be similar to the one in TranslationCache (waiting for IconsReceived and checking if the icon is now in the cache). Both functions accept a name and an optional classType parameter. The parameter classType can have the values: 
+
+svg: https://iconify.design/docs/usage/svg-css/#example
+background: https://stackoverflow.com/questions/26224858/use-base64-svg-image-as-css-content-source
+background-before: Same as background but in ::before
+background-before is the default
+
+The class needs a destroy method to destroy the topic inside (done by the service in angular-integration-interface)
+
+The service in the shell listens for IconRequested and debounces them with debounceTime(100). It checks which icon in the icon cache in the has not yet been requested and requests them all together via the bff. The results are added to the cache. When they are returned one IconsReceived message is published to indicate that there are new icons.
+
+
+
+
+
