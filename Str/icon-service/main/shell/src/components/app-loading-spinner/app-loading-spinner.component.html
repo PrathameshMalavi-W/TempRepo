@@ -1,0 +1,23 @@
+<div class="w-full h-full absolute top-0 left-0 element-overlay">
+    <div class="loader"></div>
+</div>
+
+<!-- DEBUG: Icon Status Display -->
+<div class="absolute bottom-4 left-4 bg-gray-900 text-white p-4 rounded max-h-80 overflow-y-auto text-xs font-mono">
+  <div class="font-bold mb-2">Icon Load Status</div>
+  <div *ngIf="iconStatuses.length === 0" class="text-gray-400">Waiting for icons...</div>
+  <div *ngFor="let status of iconStatuses" class="mb-2 pb-2 border-b border-gray-700">
+    <div class="font-semibold">{{ status.name }}</div>
+    <div class="text-gray-300">Type: <span class="text-blue-300">{{ status.classType }}</span></div>
+    <div class="text-gray-300">CSS Class: <span class="text-green-300 break-all">{{ status.cssClass || 'N/A' }}</span></div>
+    <div class="text-gray-300">Async Result: <span [class]="status.asyncResult ? 'text-green-300' : 'text-red-300'">{{ status.asyncResult || 'null (not found)' }}</span></div>
+    <div class="text-gray-300 mt-1">
+      Status: <span [class]="status.loaded ? 'text-green-400 font-bold' : 'text-yellow-400'">{{ status.loaded ? '✓ LOADED' : 'PENDING' }}</span>
+    </div>
+    <!-- Visual render of icon if CSS class available -->
+    <div *ngIf="status.cssClass" class="mt-2 p-2 bg-gray-800 rounded border border-gray-600">
+      <div [ngClass]="status.cssClass" class="w-6 h-6 inline-block"></div>
+      <span class="ml-2 text-gray-400">Icon preview (if available)</span>
+    </div>
+  </div>
+</div>

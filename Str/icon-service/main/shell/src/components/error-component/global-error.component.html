@@ -1,0 +1,26 @@
+<div class="pages-body error-page flex flex-column">
+  <div class="align-self-center mt-auto mb-auto">
+    <div class="pages-panel card flex flex-column">
+      <div class="pages-header px-3 py-1">
+        <h2>ERROR</h2>
+      </div>
+      <div class="card mt-3 px-6">
+        <img src="assets/images/error.png" alt="" />
+      </div>
+      <div class="pages-detail pb-6">{{errCode}}</div>
+      <button pButton pRipple type="button" label="Try Again" (click)="reload()" class="p-button-text"></button>
+    </div>
+  </div>
+</div>
+
+<!-- DEBUG: Icon Status Display (Global Error) -->
+<div class="absolute bottom-4 left-4 bg-gray-900 text-white p-4 rounded max-h-80 overflow-y-auto text-xs font-mono z-50">
+  <div class="font-bold mb-2 text-red-400">Error Icons Status</div>
+  <div *ngIf="iconStatuses.length === 0" class="text-gray-400">Waiting for icons...</div>
+  <div *ngFor="let status of iconStatuses" class="mb-2 pb-2 border-b border-gray-700">
+    <div class="font-semibold">{{ status.name }}</div>
+    <div class="text-gray-300">Type: <span class="text-blue-300">{{ status.classType }}</span></div>
+    <div class="text-gray-300">CSS: <span class="text-green-300 break-all">{{ status.cssClass || 'N/A' }}</span></div>
+    <div class="text-gray-300">Async: <span [class]="status.asyncResult ? 'text-green-300' : 'text-red-300'\">{{ status.asyncResult ? '✓ Found' : '✗ Not found' }}</span></div>
+  </div>
+</div>
