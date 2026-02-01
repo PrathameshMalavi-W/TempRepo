@@ -1,7 +1,8 @@
 # add-nocheck-recursive.ps1
 
 # $TargetDir = "C:\Z_CP\BuildWorkingRef\e-commerce-youtube-ui\src"
-$TargetDir = "C:\Users\prath\OneDrive\Desktop\TempRepo\Files"
+# $TargetDir = "C:\Users\prath\OneDrive\Desktop\TempRepo\Files"
+$TargetDir = "D:\onecx\TempRepo\Str\icon-service\main"
 $Header    = "// @ts-nocheck"
 
 Get-ChildItem -Path $TargetDir -Filter "*.ts" -File -Recurse | ForEach-Object {
