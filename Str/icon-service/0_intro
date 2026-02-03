@@ -23,6 +23,13 @@ The class needs a destroy method to destroy the topic inside (done by the servic
 The service in the shell listens for IconRequested and debounces them with debounceTime(100). It checks which icon in the icon cache in the has not yet been requested and requests them all together via the bff. The results are added to the cache. When they are returned one IconsReceived message is published to indicate that there are new icons.
 
 
+Note : 
+Endpoint to fetch icons for a specific theme by its refid (theme name) and a list of icon names (e.g. ["prime:eye", "prime:lock"])
+POST /icons/{refId}
+
+operationId:
+findIconsByNamesAndRefId()
+
 
 
 
