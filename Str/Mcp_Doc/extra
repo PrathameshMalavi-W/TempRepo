@@ -1,0 +1,28 @@
+onecx-local-env > docs > modules > onecx-local-env > pages > mcp-servers.adoc > ...
+
+
+onecx-portal-ui-libs > docs > modules > onecx-portal-ui-libs > pages > migrations > angular-19 > index.adoc >
+[#prerequisites]
+== Prerequisites
+
+Before starting this migration:
+
+* Your OneCX application is currently running on Angular 18
+* You have OneCX UI libraries v5.x installed  
+* You have a working development environment
+* MCP server configured (recommended). See xref:../../onecx-local-env/pages/mcp-servers.adoc[MCP Servers for OneCX].
+
+
+
+
+onecx-portal-ui-libs > docs > modules > onecx-portal-ui-libs > pages > migrations > angular-20 > index.adoc >
+
+[#prerequisites]
+== Prerequisites
+
+Before starting this migration:
+
+* Your OneCX application is currently running on Angular 19
+* You have OneCX UI libraries v6.x installed  
+* You have a working development environment
+* MCP server configured (recommended). See xref:../../onecx-local-env/pages/mcp-servers.adoc[MCP Servers for OneCX].
