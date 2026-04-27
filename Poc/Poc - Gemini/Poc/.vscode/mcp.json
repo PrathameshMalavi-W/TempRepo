@@ -1,0 +1,17 @@
+{
+  "servers": {
+    "onecx-docs-mcp": {
+      "url": "https://onecx-docs-ai-dev.dev.one-cx.org/mcp",
+      "type": "http"
+    },
+    "storybook": {
+      "command": "npx",
+      "args": ["-y", "storybook-mcp@latest"],
+      "env": {
+        "STORYBOOK_URL": "https://main--65f7f64d4506c9f2dfe59383.chromatic.com/index.json",
+        "CI": "true"
+      }
+    }
+  },
+  "inputs": []
+}

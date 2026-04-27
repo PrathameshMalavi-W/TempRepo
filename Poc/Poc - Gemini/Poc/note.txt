@@ -1,0 +1,47 @@
+Story
+2 parts
+Explore the Complete Repo understand this is a ai agent workflow(orchestration) for onecx POC Generation
+You can go through SYSTEM_OVERVIEW.md.
+
+SO we have this .github/prompts/create-rfp-poc.prompt.md
+Then we have 
+.github/skills/docx/SKILL.md
+.github/skills/pdf/SKILL.md
+.github/skills/pptx/SKILL.md
+.github/skills/xlsx/SKILL.md
+
+Now we need to add skills for this
+There are RPF skills we need to develop that 
+The proper way of anaklysis of such files and extracting information 
+
+You can take reference frrom the above just keep in mind the above licensing we are an opensource project used by big organizations
+https://github.com/anthropics/skills/tree/main/skills/docx
+https://github.com/anthropics/skills/tree/main/skills/pdf
+https://github.com/anthropics/skills/tree/main/skills/pptx
+https://github.com/anthropics/skills/tree/main/skills/xlsx
+
+
+Some More Inputs
+The idea of dev container is to create a enviroment for this 
+but as it still not developed (will be in future)
+For now you should install any libraries localy (You should include it in the doc the required libraries eg python...)
+But at the same time if any libraries doesnt exist you should ask permission to  the user and  install it localy
+
+
+
+
+
+What is this dev container 
+and thid rfp thing and  rfp skills?
+
+(I am naive)
+Detailed Explanation wih examples
+
+
+
+Create onecx-local-env-cli skill and create fourth subagent that is capable of deploying the created poc to local env via scripts
+Prerequise for this is the local env should be running you can refer this repo : https://github.com/onecx/onecx-local-env/blobs/main/
+More details
+https://github.com/onecx/onecx-local-env/blob/main/docs/modules/onecx-local-env/pages/setup.adoc
+ALso use @about_onecx tool the mcp is running if needed
+
