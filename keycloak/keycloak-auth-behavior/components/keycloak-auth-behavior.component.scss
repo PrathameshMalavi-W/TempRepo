@@ -1,0 +1,224 @@
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 100vh;
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 24%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+.hero-card,
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 1.25rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.hero-card {
+  padding: 1.75rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #0369a1;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-card h1,
+.section-head h2,
+.case-head h3 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.hero-card h1 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.8rem, 2vw, 2.5rem);
+}
+
+.hero-copy,
+.section-copy,
+.config-row p,
+.token-card p,
+.result-box p,
+.case-card p,
+.log-row p {
+  margin: 0.45rem 0 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.warning-copy {
+  color: #9a3412;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: 1rem;
+  color: #334155;
+}
+
+.grid,
+.runtime-grid,
+.token-grid,
+.actions-grid,
+.result-grid,
+.cases-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid {
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+}
+
+.runtime-grid,
+.token-grid,
+.actions-grid,
+.result-grid,
+.cases-list {
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.card {
+  padding: 1.25rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.action-button {
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0369a1, #0ea5e9);
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.7rem 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.action-button:hover {
+  box-shadow: 0 10px 22px rgba(14, 165, 233, 0.22);
+  transform: translateY(-1px);
+}
+
+.action-button.secondary {
+  background: linear-gradient(135deg, #334155, #475569);
+}
+
+.action-button.warn {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+}
+
+.action-button.danger {
+  background: linear-gradient(135deg, #b91c1c, #ef4444);
+}
+
+.config-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.config-row,
+.runtime-item,
+.token-card,
+.result-box,
+.case-card,
+.log-row {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(248, 250, 252, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.26);
+}
+
+.runtime-item .label,
+.token-head span,
+.case-head span {
+  display: block;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.token-head,
+.case-head,
+.log-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.result-box[data-status='pass'] {
+  background: rgba(236, 253, 245, 0.92);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.result-box[data-status='warn'] {
+  background: rgba(255, 251, 235, 0.92);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.result-box[data-status='fail'] {
+  background: rgba(254, 242, 242, 0.92);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+.log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.log-head {
+  color: #475569;
+}
+
+code {
+  display: inline-block;
+  padding: 0.12rem 0.38rem;
+  border-radius: 0.45rem;
+  background: rgba(15, 23, 42, 0.06);
+  word-break: break-word;
+}
+
+.log-row[data-level='success'] {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.log-row[data-level='warn'] {
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.log-row[data-level='error'] {
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    padding: 1rem;
+  }
+
+  .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

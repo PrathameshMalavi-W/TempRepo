@@ -1,0 +1,258 @@
+<div class="page-shell">
+  <section class="hero-card">
+    <p class="eyebrow">Internal Verification Page</p>
+    <h1>Keycloak Auth Behavior Test Page</h1>
+    <p class="hero-copy">
+      This page uses the live shell auth runtime only. It calls the real
+      <code>AuthServiceWrapper.updateTokenIfNeeded()</code>, the real
+      <code>KeycloakAuthService</code> instance, and the live Keycloak callback functions already registered in the shell.
+    </p>
+    <div class="hero-meta">
+      <span><strong>Route:</strong> <code>{{ routePath }}</code></span>
+      <span><strong>Local config file:</strong> <code>{{ localConfigPath }}</code></span>
+      <span><strong>Container/runtime template:</strong> <code>{{ containerConfigPath }}</code></span>
+    </div>
+    <p class="hero-copy warning-copy">
+      For local verification, set the config in <code>environment.ts</code>, reload the shell, then use the buttons below.
+      No runtime auth behavior is mocked here.
+    </p>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <div class="section-head">
+        <h2>Current Config</h2>
+        <button type="button" class="action-button secondary" (click)="refreshState()">Refresh Snapshot</button>
+      </div>
+      <div class="config-list">
+        <div class="config-row" *ngFor="let entry of configEntries">
+          <div>
+            <strong>{{ entry.key }}</strong>
+            <p>{{ entry.description }}</p>
+          </div>
+          <code>{{ entry.value }}</code>
+          <p>{{ entry.note }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>Runtime Snapshot</h2>
+      </div>
+      <div class="runtime-grid">
+        <div class="runtime-item">
+          <span class="label">Auth service type</span>
+          <strong>{{ runtimeSnapshot.authServiceType }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">Auth provider</span>
+          <strong>{{ runtimeSnapshot.authProviderName }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">Keycloak available</span>
+          <strong>{{ runtimeSnapshot.keycloakAvailable }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">Authenticated</span>
+          <strong>{{ runtimeSnapshot.authenticated }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">timeSkew</span>
+          <strong>{{ runtimeSnapshot.timeSkew }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">Token presence</span>
+          <strong>
+            access={{ runtimeSnapshot.tokenPresent }},
+            id={{ runtimeSnapshot.idTokenPresent }},
+            refresh={{ runtimeSnapshot.refreshTokenPresent }}
+          </strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">onReady</span>
+          <strong>{{ runtimeSnapshot.onReadyRegistered }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">onAuthSuccess</span>
+          <strong>{{ runtimeSnapshot.onAuthSuccessRegistered }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">onAuthRefreshSuccess</span>
+          <strong>{{ runtimeSnapshot.onAuthRefreshSuccessRegistered }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">onAuthError</span>
+          <strong>{{ runtimeSnapshot.onAuthErrorRegistered }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">onActionUpdate</span>
+          <strong>{{ runtimeSnapshot.onActionUpdateRegistered }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">onTokenExpired</span>
+          <strong>{{ runtimeSnapshot.onTokenExpiredRegistered }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">onAuthRefreshError</span>
+          <strong>{{ runtimeSnapshot.onAuthRefreshErrorRegistered }}</strong>
+        </div>
+        <div class="runtime-item">
+          <span class="label">onAuthLogout</span>
+          <strong>{{ runtimeSnapshot.onAuthLogoutRegistered }}</strong>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="section-head">
+      <h2>Token And LocalStorage Snapshot</h2>
+    </div>
+    <div class="token-grid">
+      <div class="token-card" *ngFor="let token of tokenDetails">
+        <div class="token-head">
+          <h3>{{ token.label }}</h3>
+          <span>{{ token.source }}</span>
+        </div>
+        <p><strong>present:</strong> {{ token.present }}</p>
+        <p><strong>preview:</strong> <code>{{ token.preview }}</code></p>
+        <p><strong>exp:</strong> {{ token.exp }}</p>
+        <p><strong>iat:</strong> {{ token.iat }}</p>
+        <p><strong>remaining seconds:</strong> {{ token.remainingSeconds }}</p>
+        <p>{{ token.note }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-head">
+      <h2>Live Action Buttons</h2>
+    </div>
+    <p class="section-copy">
+      Open browser Console and Network before using these buttons. They invoke the real auth runtime and are meant for manual verification.
+    </p>
+
+    <div class="actions-grid">
+      <button type="button" class="action-button secondary" (click)="refreshState()">Refresh State</button>
+      <button type="button" class="action-button" (click)="callUpdateTokenIfNeeded()">Call updateTokenIfNeeded()</button>
+      <button type="button" class="action-button" (click)="callConcurrentUpdateTokenIfNeeded()">Call concurrent updateTokenIfNeeded() x3</button>
+      <button type="button" class="action-button secondary" (click)="invokeCallback('onReady')">Invoke onReady()</button>
+      <button type="button" class="action-button secondary" (click)="invokeCallback('onAuthSuccess')">Invoke onAuthSuccess()</button>
+      <button type="button" class="action-button secondary" (click)="invokeCallback('onAuthRefreshSuccess')">Invoke onAuthRefreshSuccess()</button>
+      <button type="button" class="action-button secondary" (click)="invokeCallback('onAuthError')">Invoke onAuthError()</button>
+      <button type="button" class="action-button secondary" (click)="invokeCallback('onActionUpdate')">Invoke onActionUpdate()</button>
+      <button type="button" class="action-button warn" (click)="invokeCallback('onTokenExpired')">Invoke onTokenExpired()</button>
+      <button type="button" class="action-button warn" (click)="invokeCallback('onAuthRefreshError')">Invoke onAuthRefreshError()</button>
+      <button type="button" class="action-button danger" (click)="invokeCallback('onAuthLogout')">Invoke onAuthLogout()</button>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <div class="section-head">
+        <h2>updateTokenIfNeeded Result</h2>
+      </div>
+      <div class="result-box" [attr.data-status]="updateTokenIfNeededResult.status">
+        <strong>{{ updateTokenIfNeededResult.summary }}</strong>
+        <p>{{ updateTokenIfNeededResult.observed }}</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>Concurrent updateTokenIfNeeded Result</h2>
+      </div>
+      <div class="result-box" [attr.data-status]="concurrentUpdateResult.status">
+        <strong>{{ concurrentUpdateResult.summary }}</strong>
+        <p>{{ concurrentUpdateResult.observed }}</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="section-head">
+      <h2>Callback Results</h2>
+    </div>
+    <div class="result-grid">
+      <div class="result-box" [attr.data-status]="callbackResults.onReady.status">
+        <strong>onReady()</strong>
+        <p>{{ callbackResults.onReady.summary }}</p>
+        <code>{{ callbackResults.onReady.observed }}</code>
+      </div>
+      <div class="result-box" [attr.data-status]="callbackResults.onAuthSuccess.status">
+        <strong>onAuthSuccess()</strong>
+        <p>{{ callbackResults.onAuthSuccess.summary }}</p>
+        <code>{{ callbackResults.onAuthSuccess.observed }}</code>
+      </div>
+      <div class="result-box" [attr.data-status]="callbackResults.onAuthRefreshSuccess.status">
+        <strong>onAuthRefreshSuccess()</strong>
+        <p>{{ callbackResults.onAuthRefreshSuccess.summary }}</p>
+        <code>{{ callbackResults.onAuthRefreshSuccess.observed }}</code>
+      </div>
+      <div class="result-box" [attr.data-status]="callbackResults.onAuthError.status">
+        <strong>onAuthError()</strong>
+        <p>{{ callbackResults.onAuthError.summary }}</p>
+        <code>{{ callbackResults.onAuthError.observed }}</code>
+      </div>
+      <div class="result-box" [attr.data-status]="callbackResults.onActionUpdate.status">
+        <strong>onActionUpdate()</strong>
+        <p>{{ callbackResults.onActionUpdate.summary }}</p>
+        <code>{{ callbackResults.onActionUpdate.observed }}</code>
+      </div>
+      <div class="result-box" [attr.data-status]="callbackResults.onTokenExpired.status">
+        <strong>onTokenExpired()</strong>
+        <p>{{ callbackResults.onTokenExpired.summary }}</p>
+        <code>{{ callbackResults.onTokenExpired.observed }}</code>
+      </div>
+      <div class="result-box" [attr.data-status]="callbackResults.onAuthRefreshError.status">
+        <strong>onAuthRefreshError()</strong>
+        <p>{{ callbackResults.onAuthRefreshError.summary }}</p>
+        <code>{{ callbackResults.onAuthRefreshError.observed }}</code>
+      </div>
+      <div class="result-box" [attr.data-status]="callbackResults.onAuthLogout.status">
+        <strong>onAuthLogout()</strong>
+        <p>{{ callbackResults.onAuthLogout.summary }}</p>
+        <code>{{ callbackResults.onAuthLogout.observed }}</code>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-head">
+      <h2>Manual Test Cases</h2>
+    </div>
+    <p class="section-copy">
+      Set the config in <code>{{ localConfigPath }}</code>, reload the shell, open this page, then perform the trigger exactly as listed below.
+    </p>
+    <div class="cases-list">
+      <div class="case-card" *ngFor="let testCase of testCases">
+        <div class="case-head">
+          <span>{{ testCase.id }}</span>
+          <h3>{{ testCase.title }}</h3>
+        </div>
+        <p><strong>Config:</strong> {{ testCase.config }}</p>
+        <p><strong>Trigger:</strong> {{ testCase.trigger }}</p>
+        <p><strong>Expected:</strong> {{ testCase.expected }}</p>
+        <p><strong>Notes:</strong> {{ testCase.notes }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-head">
+      <h2>Activity Log</h2>
+      <button type="button" class="action-button secondary" (click)="clearLogs()">Clear Log</button>
+    </div>
+    <div class="log-list">
+      <div class="log-row" *ngFor="let log of logs" [attr.data-level]="log.level">
+        <div class="log-head">
+          <strong>{{ log.at }}</strong>
+          <span>{{ log.level }}</span>
+        </div>
+        <p>{{ log.message }}</p>
+        <code *ngIf="log.details">{{ log.details }}</code>
+      </div>
+    </div>
+  </section>
+</div>
