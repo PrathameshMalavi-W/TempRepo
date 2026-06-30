@@ -1,0 +1,202 @@
+Hello
+SO their is this new thing in tech world, Google lauched ucp Universal Comemerce Protocol
+I know this is something for communication between ai-client and merchant
+I want to understand how this works, Explain me like i am naive in details
+I have cloned 2 repos 
+ucp-official : This is official repo of ucp i don't know what this is about but starting point this is i feel like a documentation
+ucp-sample-implementation :: this is a sample implementation as it says in official but i am confused about the setup and how to start it has so many internal folders what are they and what is each about i am confused like i dot see any  folder named ucp-server, ai-client, or backend are this major actors for ucp? then why this implementation looks so diff which folder has what? and why do we have business-agents isn't ai-client supposed to be the agent why would business responsible for nlp
+
+also we cant run this directly on any official client as far as i researched it only possible to test mocking aiclient in local machine with api key is it true?
+Does the current sample provide this mock client? if yes where i dont want a split in 2 servers ai and business beause that not know in real world ai client workd? is it right?
+
+Goal is to learn and understand for now
+
+Make sure you record each finding and explanation in a md folder in root (ALso i am naive to this)
+
+
+
+
+
+
+
+Okay so you are saying their are 3 implementation
+1 python-rest
+2 node-rest
+3 a2a
+
+HOw to run this both 
+rest python and a2a write a script to start completey in for both in their root folder  (Also check if required dependency or python is their on my machine if not do the installation as well we are wsl environment)
+And in rest example their is no ui why? also why only a2a has end to end example
+WHy dont we have mock ai client ui example for rest Should that as well show have one?
+
+
+
+
+
+
+
+Also their should be stop script for both to remove all running process which were started by start script
+You did not answer why did the rest did not have aiclient in 1st place 
+
+
+Better make an angular based mock app
+ALso add env with api key which i will update 
+ALso it should be similar to replicate any ai client
+Like it should maintain a registry of merchant and their exposed ucp
+And then ai agent should check for registry also should do be able to handle and to end implemnentation as i want to demonstrate poc 
+
+
+Also the rest script doest work
+▶ Step 4: Installing server dependencies
+error: Distribution not found at: file:///home/pratham/poc/python-sdk
+pratham@PrathameshDesktop:~/poc/ucp-sample-implementation/rest/python$
+
+
+
+
+
+
+
+
+
+
+
+
+Hello
+SO their is this new thing in tech world on which i am planning to make a poc which we see further
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://github.com/Universal-Commerce-Protocol/ucp
+
+
+https://medium.com/@visrow/universal-commerce-protocol-ucp-java-implementation-building-ai-agent-enabled-checkout-and-1d6d5552084a
+
+
+Package
+https://github.com/vishalmysore/ucpjava
+
+https://github.com/vishalmysore/ucpexample/
+
+
+
+https://github.com/Open-Commerce-Protocol/ucp-sdk-java/blob/main/sdk/README.md
+
+
+
+
+
+
+
+ALso just a suggest why should we switch between mechant through drop down
+Should the model process and decide the merchant from the registry and then maintain that in context unless a new request which is not product or branch request that is not satisfies by this then should agai check registry?
+
+
+
+
+
+Add a input for apikey of obsured text at above the merchant dropdown
+Also clean the code where needed as of its too 2000+lines of code
+
+ALso make sure you mimic any ai platform that could be used to test ucp should mimic official ucp protocol bhevaiour it should follow the official doumenation and sources for schemas and naming convection use following resoures (Please read thoughly where needed)
+/home/pratham/poc/ucp-official/
+/home/pratham/poc/ucp-schema/
+/home/pratham/poc/conformance
+
+Ai platform should expose any profile if needed
+Also Question where does the intersection of capabilities happen on rest or aipatform? Is it done by ucp server to check or by ai platform or both? do you do that
+
+ALso make the read for this ai-client me understandable that  any one with ai client could deveop ucp and test with our ai cient
+
+
+
+
+
+I hope you read all sources througly and apdapted the client accordingly 
+/home/pratham/poc/ucp-official/
+/home/pratham/poc/ucp-schema/
+/home/pratham/poc/conformance
+
+but does this client support identity linking?
+I need a complete dev guide for development of ucp language independent (todos that need to be done)
+I need a complete architecture guide to understand the working of this client detailed workings and stuff (also how this client resembles any real ai client ucp adaptation)
+
+
+
+
+
+
+
+**************************************************************************************************************
+
+
+
+
+
+The client doesn't repones to normal message also ? it should show similar behaviour as the normal ai platform 
+Why it should answer all user message like any other ai-client
+Also add a default product image if not available store it assest ucp-angular-client/public/no-poduct-image.png
+Also the ai client should show something till it repond to user something like a chat with ... for the loading state
+Also i am just assuming this works as actual ai-client would work working with ucp to replicate and test behaviour
+
+The css is shit as content gets compressed for aside get compressed when chat is window size and the chat when given full width as aside then user needs to scroll to bottom to to chat not agood ux check if the design could be made better
+
+
+
+
+
+
+
+
+**************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Context
+I have cloned 2 repos 
+ucp-official : This is official repo of ucp i don't know what this is about but starting point this is i feel like a documentation
+ucp-sample-implementation :: The sample implemenattaion of ucp
+So we are creating a poc which would demonstrate the ucp for one of our client
+We are starting with creating a mock ai client to with existing ucp-sample-implementation/rest/python sample although our client as of now But this is not working many missing this on client side doesn't work as expected as ucp should work with ai-client
+DOesnt show all products when said so
+Doesnt show products images with other required product data as it should doesn't show the add to checkout option for products so it can be added to checkout
+DOesnt have anypayemnt stuff 
+Give many erors
+
+
+
+
+Why are we not able to see the dynamic pop up and checkout similar to following from  ucp-sample-implementation/a2a/chat-client but this one is limited to a2a and doesn't support multiple merchants
+We are trying to create a mock ai client implementation in angular that would help us test the ucp for rest and a2a both as the above mentioned 
+Also why does this client is not exposing its own capabilities? Like in the docs We see
+
+
+
